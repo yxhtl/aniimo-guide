@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伊莫图鉴 | Aniimo Codex 中英双语攻略</title>
+<meta name="description" content="伊莫图鉴：全部95+伊莫数据，含属性、战斗定位、进化阶段、六维属性、形态变化与捕捉技巧。支持按属性筛选。">
+<meta name="keywords" content="伊莫图鉴,Aniimo Codex,属性,火,水,草,电,冰,土,风,光,暗,进化,形态,DPS,Break">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"伊莫图鉴","inLanguage":"zh-CN","about":"全部伊莫生物数据图鉴","isPartOf":{"@type":"WebSite","name":"伊莫攻略站"}}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="logo">A</span><span data-i18n="brand">伊莫攻略站</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="getting-started.html" data-i18n="nav.getting-started">新手入门</a>
+      <a href="creatures.html" class="active" data-i18n="nav.creatures">伊莫图鉴</a>
+      <a href="combat.html" data-i18n="nav.combat">战斗系统</a>
+      <a href="breeding.html" data-i18n="nav.breeding">培育养成</a>
+      <a href="explore.html" data-i18n="nav.explore">世界探索</a>
+      <a href="homeland.html" data-i18n="nav.homeland">家园建造</a>
+    </nav>
+    <div class="nav-utils">
+      <button class="nav-btn search-btn" aria-label="搜索"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+      <button class="nav-btn dark-btn" aria-label="暗色模式"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="nav-btn lang-btn" aria-label="语言">English</button>
+      <a href="index.html" class="nav-cta" data-i18n="nav.cta.home">返回首页</a>
+    </div>
+    <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section id="top" style="padding-top:54px">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html" data-en="Home">首页</a> <span>›</span> <span data-en="Codex">伊莫图鉴</span></div>
+    <span class="eyebrow" data-en="Aniimo Codex">伊莫图鉴</span>
+    <h2 class="title" data-en="Complete Aniimo Index">全伊莫图鉴</h2>
+    <p class="subtitle" data-en="95+ Aniimo across 9 elements and 5 combat roles. Filter by element type, click a card for details. Stats shown are base-form beta values — may be retuned at launch.">95+ 伊莫，覆盖9种属性和5种战斗定位。点击属性标签筛选，卡片展示六维数据。属性为Beta测试值，正式上线可能调整。</p>
+
+    <!-- Filter chips -->
+    <div class="chips">
+      <button class="chip active" data-filter="all" data-i18n="totype.all">全部</button>
+      <button class="chip" data-filter="fire" data-en="Fire">火</button>
+      <button class="chip" data-filter="water" data-en="Water">水</button>
+      <button class="chip" data-filter="grass" data-en="Grass">草</button>
+      <button class="chip" data-filter="electric" data-en="Lightning">电</button>
+      <button class="chip" data-filter="ice" data-en="Ice">冰</button>
+      <button class="chip" data-filter="earth" data-en="Earth">土</button>
+      <button class="chip" data-filter="wind" data-en="Wind">风</button>
+      <button class="chip" data-filter="light" data-en="Light">光</button>
+      <button class="chip" data-filter="dark" data-en="Dark">暗</button>
+    </div>
+
+    <!-- Creature grid -->
+    <div class="res-grid">
+      <!-- 001 Emberpup -->
+      <div class="creature-card" data-type="fire"><div class="creature-head"><div class="creature-no">001</div><div><h4 data-en="Emberpup">炽焰犬</h4><div class="cn-name" data-en="Fire · DPS">火 · 输出</div></div></div><p data-en="Lively creatures that follow Flameruffs around. Once the smoldering fur starts to burn, they thrive.">活泼的小家伙，喜欢跟着 Flameruff 跑。一旦身上的焦毛开始燃烧，就会变得生龙活虎。</p><div class="type-row"><span class="type-badge t-fire" data-en="Fire">火</span></div><div class="form-tag" data-en="Stage: Lumin · Forms: Basic / Highland / Mountain Woods">阶段：Lumin · 形态：基础/高地/山林</div></div>
+      <!-- 002 Flameruff -->
+      <div class="creature-card" data-type="fire"><div class="creature-head"><div class="creature-no">002</div><div><h4 data-en="Flameruff">燃绒犬</h4><div class="cn-name" data-en="Fire · DPS">火 · 输出</div></div></div><p data-en="Evolved form of Emberpup. Gamma stage with higher ATK and HP.">炽焰犬的进化形态。Gamma 阶段，攻击和血量更高。</p><div class="type-row"><span class="type-badge t-fire" data-en="Fire">火</span></div><div class="form-tag" data-en="Stage: Gamma">阶段：Gamma</div></div>
+      <!-- 003 Scorchhowl -->
+      <div class="creature-card" data-type="fire"><div class="creature-head"><div class="creature-no">003</div><div><h4 data-en="Scorchhowl">炽嚎</h4><div class="cn-name" data-en="Fire · DPS">火 · 输出</div></div></div><p data-en="They enjoy the thrill of the fight since flame and burning mark their growth. Nova stage with Thunderstorm and Prismana forms.">热衷于战斗的快感，火焰与灼烧印记见证其成长。Nova 阶段，拥有雷暴形态和棱晶形态。</p><div class="type-row"><span class="type-badge t-fire" data-en="Fire">火</span></div><div class="form-tag" data-en="Stage: Nova · Forms: Normal / Thunderstorm / Prismana">阶段：Nova · 形态：普通/雷暴/棱晶</div></div>
+      <!-- 004 Inferlupa -->
+      <div class="creature-card" data-type="fire"><div class="creature-head"><div class="creature-no">004</div><div><h4 data-en="Inferlupa">炼狱狼</h4><div class="cn-name" data-en="Fire · Break">火 · 破防</div></div></div><p data-en="Alternate Nova evolution of the Flameruff line, gated behind a multi-day narrative quest. Highest BREAK in the fire roster.">Flameruff 线的 Nova 分支进化，需完成多日剧情任务解锁。火系中 BREAK 最高。</p><div class="type-row"><span class="type-badge t-fire" data-en="Fire">火</span></div><div class="form-tag" data-en="Stage: Nova · Quest-locked">阶段：Nova · 任务解锁</div></div>
+      <!-- 005 Celestis -->
+      <div class="creature-card" data-type="dark"><div class="creature-head"><div class="creature-no">005</div><div><h4 data-en="Celestis">星角</h4><div class="cn-name" data-en="Dark · DPS">暗 · 输出</div></div></div><p data-en="They love food! When searching the forest for food, the glowing stars on their heads are often mistaken for comets.">是个吃货！夜间在森林觅食时，头顶的发光星角常被误认为流星。</p><div class="type-row"><span class="type-badge t-dark" data-en="Dark">暗</span></div><div class="form-tag" data-en="Forms: Normal">形态：普通</div></div>
+      <!-- 006 Stellarys -->
+      <div class="creature-card" data-type="dark"><div class="creature-head"><div class="creature-no">006</div><div><h4 data-en="Stellarys">星辉</h4><div class="cn-name" data-en="Dark · DPS">暗 · 输出</div></div></div><p data-en="Nova evolution of Celestis. ATK 125, highest raw attack in the dark roster.">星角的 Nova 进化。攻击力125，暗系最高 raw ATK。</p><div class="type-row"><span class="type-badge t-dark" data-en="Dark">暗</span></div><div class="form-tag" data-en="Stage: Nova">阶段：Nova</div></div>
+      <!-- 007 Chirpi -->
+      <div class="creature-card" data-type="wind"><div class="creature-head"><div class="creature-no">007</div><div><h4 data-en="Chirpi">啾啾鸟</h4><div class="cn-name" data-en="Wind · Support">风 · 辅助</div></div></div><p data-en="Small wind-type support Aniimo. High HP (96) and decent M.DEF for its stage.">小型风属性辅助伊莫。血量96，魔防不错。</p><div class="type-row"><span class="type-badge t-wind" data-en="Wind">风</span></div><div class="form-tag" data-en="Forms: Normal">形态：普通</div></div>
+      <!-- 010 Tubster -->
+      <div class="creature-card" data-type="wind"><div class="creature-head"><div class="creature-no">010</div><div><h4 data-en="Tubster">圆桶兽</h4><div class="cn-name" data-en="Wind · Break">风 · 破防</div></div></div><p data-en="A sturdy Break Aniimo with BREAK 101 and HP 108. Recommended for Alpha battles.">健壮的破防伊莫，BREAK 101，血量108。Alpha 战推荐使用。</p><div class="type-row"><span class="type-badge t-wind" data-en="Wind">风</span></div><div class="form-tag" data-en="Stage: Nova">阶段：Nova</div></div>
+      <!-- 016 Glacy -->
+      <div class="creature-card" data-type="water"><div class="creature-head"><div class="creature-no">016</div><div><h4 data-en="Glacy">冰璃</h4><div class="cn-name" data-en="Water/Ice · Heal">水/冰 · 治疗</div></div></div><p data-en="Dual-type healer with Water and Ice. HP 118, solid defensive stats.">水冰双属性治疗。血量118，防御面扎实。</p><div class="type-row"><span class="type-badge t-water" data-en="Water">水</span><span class="type-badge t-ice" data-en="Ice">冰</span></div><div class="form-tag" data-en="Forms: Normal">形态：普通</div></div>
+      <!-- 017 Leafy -->
+      <div class="creature-card" data-type="grass"><div class="creature-head"><div class="creature-no">017</div><div><h4 data-en="Leafy">叶叶</h4><div class="cn-name" data-en="Grass/Water · Regen">草/水 · 回复</div></div></div><p data-en="Dual-type regen Aniimo. HP 120 and REGEN 106 — exceptional sustain for long fights.">草水双属性回复伊莫。血量120、回复106——长线作战顶级续航。</p><div class="type-row"><span class="type-badge t-grass" data-en="Grass">草</span><span class="type-badge t-water" data-en="Water">水</span></div><div class="form-tag" data-en="Stage: Nova">阶段：Nova</div></div>
+      <!-- 018 Nimbi -->
+      <div class="creature-card" data-type="wind"><div class="creature-head"><div class="creature-no">018</div><div><h4 data-en="Nimbi">浮云</h4><div class="cn-name" data-en="Wind · Support">风 · 辅助</div></div></div><p data-en="Don't be surprised to see them floating in the clouds in small groups above the grasslands. Has a Rainstorm form.">成群漂浮在草地上空，看到它们在云间飘荡也别惊讶。拥有暴雨形态。</p><div class="type-row"><span class="type-badge t-wind" data-en="Wind">风</span></div><div class="form-tag" data-en="Stage: Lumin · Forms: Normal / Rainstorm">阶段：Lumin · 形态：普通/暴雨</div></div>
+      <!-- 024 Budclaw -->
+      <div class="creature-card" data-type="earth"><div class="creature-head"><div class="creature-no">024</div><div><h4 data-en="Budclaw">芽爪</h4><div class="cn-name" data-en="Earth/Grass · Break">土/草 · 破防</div></div></div><p data-en="Mates for life, always found in pairs. The heartbloom atop their shells indicates their happiness.">终身一伴，总是成对出现。壳顶的心形花苞是它们幸福程度的指示器。</p><div class="type-row"><span class="type-badge t-earth" data-en="Earth">土</span><span class="type-badge t-grass" data-en="Grass">草</span></div><div class="form-tag" data-en="Forms: Normal / Mudflat">形态：普通/泥滩</div></div>
+      <!-- 043 Ignitis -->
+      <div class="creature-card" data-type="dark"><div class="creature-head"><div class="creature-no">043</div><div><h4 data-en="Ignitis">暗袭</h4><div class="cn-name" data-en="Dark · DPS">暗 · 输出</div></div></div><p data-en="They patiently wait in the shadows for the right moment to deliver a deadly strike. ATK 128, top-tier dark DPS.">耐心潜伏在暗影中，等待最佳时机发动致命一击。攻击力128，顶级暗系输出。</p><div class="type-row"><span class="type-badge t-dark" data-en="Dark">暗</span></div><div class="form-tag" data-en="Stage: Nova · Forms: Normal / Forest">阶段：Nova · 形态：普通/森林</div></div>
+      <!-- 050 Susuta -->
+      <div class="creature-card" data-type="water"><div class="creature-head"><div class="creature-no">050</div><div><h4 data-en="Susuta">潜猪</h4><div class="cn-name" data-en="Water · Break">水 · 破防</div></div></div><p data-en="They dig around to search for gifts to give to their crushes, but their wooing always fails because they are so shy.">到处挖土找礼物想送给心仪对象，但因为太害羞总是表白失败。</p><div class="type-row"><span class="type-badge t-water" data-en="Water">水</span></div><div class="form-tag" data-en="Stage: Lumin · Forms: Normal">阶段：Lumin · 形态：普通</div></div>
+      <!-- 054 Shelly -->
+      <div class="creature-card" data-type="water"><div class="creature-head"><div class="creature-no">054</div><div><h4 data-en="Shelly">贝壳酱</h4><div class="cn-name" data-en="Water · DPS">水 · 输出</div></div></div><p data-en="Water DPS with balanced stats. Gather Shelly to unveil the secrets of mystical ecological archives.">水系输出，属性均衡。收集贝壳酱可以揭开神秘生态档案的秘密。</p><div class="type-row"><span class="type-badge t-water" data-en="Water">水</span></div><div class="form-tag" data-en="Forms: Normal">形态：普通</div></div>
+      <!-- 063 Pawney -->
+      <div class="creature-card" data-type="dark"><div class="creature-head"><div class="creature-no">063</div><div><h4 data-en="Pawney">勇骑</h4><div class="cn-name" data-en="Dark · DPS">暗 · 输出</div></div></div><p data-en="Armed with a broken sword and armor, blessed with courage and might, it defends its friends and challenges its foes. ATK 128.">手持断剑和铠甲，被勇气与力量祝福，守护伙伴、挑战强敌。攻击力128。</p><div class="type-row"><span class="type-badge t-dark" data-en="Dark">暗</span></div><div class="form-tag" data-en="Forms: Normal / Prismana">形态：普通/棱晶</div></div>
+      <!-- 080 Luminelle -->
+      <div class="creature-card" data-type="electric"><div class="creature-head"><div class="creature-no">080</div><div><h4 data-en="Luminelle">光精灵</h4><div class="cn-name" data-en="Electric · Support">电 · 辅助</div></div></div><p data-en="Nova-stage support with HP 110 and REGEN 120. Has an Alpha variant that respawns in the world.">Nova 阶段辅助，血量110，回复120。世界中有 Alpha 变体可刷新挑战。</p><div class="type-row"><span class="type-badge t-electric" data-en="Lightning">电</span></div><div class="form-tag" data-en="Stage: Nova">阶段：Nova</div></div>
+      <!-- 085 Coraliz -->
+      <div class="creature-card" data-type="earth"><div class="creature-head"><div class="creature-no">085</div><div><h4 data-en="Coraliz">珊瑚兽</h4><div class="cn-name" data-en="Earth/Water · Regen">土/水 · 回复</div></div></div><p data-en="Dual-type regen with total stats 572 — the highest base total in the current roster. REGEN 108.">土水双属性回复，总属性572——当前图鉴中最高总属性。回复108。</p><div class="type-row"><span class="type-badge t-earth" data-en="Earth">土</span><span class="type-badge t-water" data-en="Water">水</span></div><div class="form-tag" data-en="Forms: Normal">形态：普通</div></div>
+      <!-- 087 Wavwal -->
+      <div class="creature-card" data-type="ice"><div class="creature-head"><div class="creature-no">087</div><div><h4 data-en="Wavwal">波涛兽</h4><div class="cn-name" data-en="Ice · Break">冰 · 破防</div></div></div><p data-en="Nova-stage Break Aniimo with total stats 575, BREAK 110. Currently the highest total in the codex.">Nova 阶段破防伊莫，总属性575，BREAK 110。目前图鉴中总属性最高。</p><div class="type-row"><span class="type-badge t-ice" data-en="Ice">冰</span></div><div class="form-tag" data-en="Stage: Nova">阶段：Nova</div></div>
+      <!-- Helion -->
+      <div class="creature-card" data-type="light"><div class="creature-head"><div class="creature-no">—</div><div><h4 data-en="Helion">赫利昂</h4><div class="cn-name" data-en="Light · Starter">光 · 初始</div></div></div><p data-en="One of the two special starter Aniimo. Total stats 504, ATK 116, BREAK 85. Light element.">两只特殊初始伊莫之一。总属性504，攻击力116，破防85。光属性。</p><div class="type-row"><span class="type-badge t-light" data-en="Light">光</span></div><div class="form-tag" data-en="Starter Aniimo">初始伊莫</div></div>
+      <!-- Lunara -->
+      <div class="creature-card" data-type="light"><div class="creature-head"><div class="creature-no">—</div><div><h4 data-en="Lunara">露娜拉</h4><div class="cn-name" data-en="Light · Starter">光 · 初始</div></div></div><p data-en="The other special starter. Same stats as Helion (504 total). Choose between Helion and Lunara at the start.">另一只特殊初始伊莫。属性与赫利昂相同（总属性504）。开局二选一。</p><div class="type-row"><span class="type-badge t-light" data-en="Light">光</span></div><div class="form-tag" data-en="Starter Aniimo">初始伊莫</div></div>
+    </div>
+
+    <!-- Stat table for top creatures -->
+    <div style="margin-top:40px">
+      <span class="eyebrow" data-en="Top Stats">属性排行</span>
+      <h2 class="title" data-en="Highest Base Stats by Category">各维度属性排行</h2>
+      <p class="subtitle" data-en="Base-form values from the official Aniimo Index (wiki.aniimo.com). Beta build — may be retuned at launch.">数据来源：官方伊莫图鉴 (wiki.aniimo.com)，Beta 测试值，上线可能调整。</p>
+      <div class="data-table">
+        <table>
+          <thead><tr><th data-en="Rank">排名</th><th data-en="Aniimo">伊莫</th><th data-en="Role">定位</th><th data-en="Element">属性</th><th>HP</th><th>BREAK</th><th>ATK</th><th data-en="P.DEF">物防</th><th data-en="M.DEF">魔防</th><th data-en="REGEN">回复</th><th data-en="Total">总和</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><b>Wavwal</b></td><td data-en="Break">破防</td><td><span class="type-badge t-ice">冰</span></td><td>105</td><td><b>110</b></td><td>75</td><td>89</td><td>93</td><td>103</td><td><b>575</b></td></tr>
+            <tr><td>2</td><td><b>Coraliz</b></td><td data-en="Regen">回复</td><td><span class="type-badge t-earth">土</span><span class="type-badge t-water">水</span></td><td>98</td><td>107</td><td>78</td><td>88</td><td>93</td><td><b>108</b></td><td><b>572</b></td></tr>
+            <tr><td>3</td><td><b>Minespine</b></td><td data-en="Break">破防</td><td><span class="type-badge t-earth">土</span></td><td><b>110</b></td><td><b>113</b></td><td>90</td><td>99</td><td>60</td><td>78</td><td><b>550</b></td></tr>
+            <tr><td>4</td><td><b>Helgon</b></td><td data-en="Break">破防</td><td><span class="type-badge t-wind">风</span></td><td>105</td><td><b>102</b></td><td>85</td><td><b>111</b></td><td>68</td><td>84</td><td><b>555</b></td></tr>
+            <tr><td>5</td><td><b>Inferlupa</b></td><td data-en="Break">破防</td><td><span class="type-badge t-fire">火</span></td><td>95</td><td><b>113</b></td><td>89</td><td>70</td><td>80</td><td>104</td><td><b>551</b></td></tr>
+            <tr><td>6</td><td><b>Rookey</b></td><td data-en="Break">破防</td><td><span class="type-badge t-dark">暗</span><span class="type-badge t-ice">冰</span></td><td>103</td><td><b>105</b></td><td>92</td><td>103</td><td>70</td><td>75</td><td><b>548</b></td></tr>
+            <tr><td>7</td><td><b>Magmarex</b></td><td data-en="Break">破防</td><td><span class="type-badge t-fire">火</span><span class="type-badge t-dark">暗</span></td><td>110</td><td>104</td><td>91</td><td>70</td><td>99</td><td>75</td><td><b>549</b></td></tr>
+            <tr><td>8</td><td><b>Panpanta</b></td><td data-en="Break">破防</td><td><span class="type-badge t-water">水</span></td><td>104</td><td><b>100</b></td><td>85</td><td>70</td><td><b>106</b></td><td>80</td><td><b>545</b></td></tr>
+            <tr><td>9</td><td><b>Tubster</b></td><td data-en="Break">破防</td><td><span class="type-badge t-wind">风</span></td><td>108</td><td><b>101</b></td><td>75</td><td>61</td><td><b>110</b></td><td>80</td><td><b>535</b></td></tr>
+            <tr><td>10</td><td><b>Ignitis</b></td><td data-en="DPS">输出</td><td><span class="type-badge t-dark">暗</span></td><td>90</td><td>50</td><td><b>128</b></td><td>70</td><td>63</td><td>91</td><td><b>492</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="data-source">
+      <b data-en="Data Sources">数据来源</b>：<span data-en="Official Aniimo Index (wiki.aniimo.com), aniimotools.dev creature database. Stats are beta-build values, may be retuned at launch. Verified 2026-07-25.">官方伊莫图鉴 (wiki.aniimo.com)、aniimotools.dev 生物数据库。属性为Beta测试值，上线可能调整。核对日期：2026-07-25。</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand" style="color:#fff"><span class="logo">A</span><span data-en="Aniimo Guide">伊莫攻略站</span></a>
+        <p data-i18n="foot.branddesc">《伊莫》中英双语攻略站，原创整理，持续更新。</p>
+        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to Pawprint Studio.">本站为玩家非营利性攻略站，游戏版权归 Pawprint Studio 所有。</p>
+      </div>
+      <div><h4 data-i18n="foot.nav">攻略导航</h4><a href="getting-started.html" data-en="Beginner">新手入门</a><a href="creatures.html" data-en="Codex">伊莫图鉴</a><a href="combat.html" data-en="Combat">战斗系统</a></div>
+      <div><h4 data-i18n="foot.systems">系统攻略</h4><a href="breeding.html" data-en="Breeding">培育养成</a><a href="explore.html" data-en="Explore">世界探索</a><a href="homeland.html" data-en="Homeland">家园建造</a></div>
+      <div><h4 data-i18n="foot.about">关于</h4><a href="#" data-i18n="foot.aboutus">关于本站</a><a href="#" data-i18n="foot.feedback">投稿反馈</a><a href="#" data-i18n="foot.changelog">更新日志</a></div>
+    </div>
+    <div class="foot-bottom" data-i18n="foot.copy">© 2026 伊莫攻略站 · Aniimo Bilingual Guide · 仅供学习交流</div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="返回顶部" data-en="Top">顶部</button>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel">
+    <div class="search-input-wrap">
+      <span class="s-ico"></span>
+      <input type="text" placeholder="搜索伊莫、属性、攻略…">
+      <button class="search-close" aria-label="关闭">×</button>
+    </div>
+    <div class="search-results"></div>
+  </div>
+</div>
+<script src="js/common.js"></script>
+</body>
+</html>

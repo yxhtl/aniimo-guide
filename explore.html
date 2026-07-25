@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>世界探索：伊迪尔大陆 | 伊莫 Aniimo 攻略</title>
+<meta name="description" content="伊莫世界探索攻略：伊迪尔大陆15个区域、天空都市、滑翔/潜水/钻地移动方式、天气与昼夜刷怪系统、棱晶流、Alpha Boss位置。">
+<meta name="keywords" content="伊莫探索,Aniimo explore,伊迪尔大陆,Idyll,区域,天气,昼夜,棱晶流,Prismana Flow,滑翔,潜水,钻地,Alpha">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"伊莫世界探索攻略","inLanguage":"zh-CN","about":"伊迪尔大陆区域、移动方式与天气系统","isPartOf":{"@type":"WebSite","name":"伊莫攻略站"}}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="logo">A</span><span data-i18n="brand">伊莫攻略站</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="getting-started.html" data-i18n="nav.getting-started">新手入门</a>
+      <a href="creatures.html" data-i18n="nav.creatures">伊莫图鉴</a>
+      <a href="combat.html" data-i18n="nav.combat">战斗系统</a>
+      <a href="breeding.html" data-i18n="nav.breeding">培育养成</a>
+      <a href="explore.html" class="active" data-i18n="nav.explore">世界探索</a>
+      <a href="homeland.html" data-i18n="nav.homeland">家园建造</a>
+    </nav>
+    <div class="nav-utils">
+      <button class="nav-btn search-btn" aria-label="搜索"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+      <button class="nav-btn dark-btn" aria-label="暗色模式"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="nav-btn lang-btn" aria-label="语言">English</button>
+      <a href="index.html" class="nav-cta" data-i18n="nav.cta.home">返回首页</a>
+    </div>
+    <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section id="top" style="padding-top:54px">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html" data-en="Home">首页</a> <span>›</span> <span data-en="Explore">世界探索</span></div>
+    <span class="eyebrow" data-en="World Exploration">世界探索</span>
+    <h2 class="title" data-en="The Continent of Idyll">伊迪尔大陆</h2>
+    <p class="subtitle" data-en="Idyll is expansive and alive: from lush forests to scorching volcanoes, floating cities to deep-sea wonders. 15 named regions, seamless open world. Every corner is worth exploring.">伊迪尔辽阔而鲜活：从葱郁森林到灼热火山，漂浮都市到深海奇观。15个命名区域，无缝开放世界。每个角落都值得探索。</p>
+
+    <!-- Regions -->
+    <span class="eyebrow" data-en="Regions">区域一览</span>
+    <h2 class="title" data-en="15 Named Regions">15个命名区域</h2>
+    <p class="subtitle" data-en="Each region has unique Aniimo, weather patterns, and environmental puzzles. Some regions are flagged for high-potential catches.">每个区域有独特的伊莫、天气模式和环境解谜。部分区域标记为高潜力捕捉区。</p>
+    <div class="map-grid">
+      <div class="map-card r-forest"><div class="map-head"><div class="num">01</div><h4 data-en="Nimbus Fields">雨云原野</h4></div><p data-en="Starting meadow area. Grass and wind-type Aniimo. Gentle terrain, ideal for first catches.">初始草地区域。草/风属性伊莫。地形平缓，适合首次捕捉。</p><ul><li data-en="Element types: Grass, Wind">属性：草、风</li><li data-en="Notable: Emberpup habitat">特点：炽焰犬栖息地</li></ul></div>
+      <div class="map-card r-forest"><div class="map-head"><div class="num">02</div><h4 data-en="Mistwoods">雾林</h4></div><p data-en="Lush forest with physics-based puzzles. Prismana Flow weather can trigger here, spawning rare Prismana-form Aniimo.">茂密森林，有物理解谜。棱晶流天气可在此触发，刷出稀有棱晶形态伊莫。</p><ul><li data-en="Element types: Grass, Dark, Fire">属性：草、暗、火</li><li data-en="Weather: Prismana Flow possible">天气：可能触发棱晶流</li></ul></div>
+      <div class="map-card r-coast"><div class="map-head"><div class="num">03</div><h4 data-en="The Argent Strait">银白海峡</h4></div><p data-en="Coastal region with diving opportunities. Water-type Aniimo and underwater exploration.">沿海区域，可潜水。水属性伊莫和水下探索。</p><ul><li data-en="Element types: Water, Earth">属性：水、土</li><li data-en="Movement: Dive">移动：潜水</li></ul></div>
+      <div class="map-card r-mountain"><div class="map-head"><div class="num">04</div><h4 data-en="Beast Fang Ridge">兽牙岭</h4></div><p data-en="Mountainous terrain requiring climbing and gliding. Home to powerful earth and ice types.">山地地形，需攀爬和滑翔。强力土/冰属性伊莫栖息地。</p><ul><li data-en="Element types: Earth, Ice">属性：土、冰</li><li data-en="Movement: Climb, Glide">移动：攀爬、滑翔</li></ul></div>
+      <div class="map-card r-volcano"><div class="map-head"><div class="num">05</div><h4 data-en="Russet Highlands">赤褐高原</h4></div><p data-en="Volcanic region. Prismana Flow forecast active. Fire and earth dual-types like Lavazar and Magmarex.">火山区域。棱晶流预报活跃。火/土双属性如熔岩虫和熔岩兽。</p><ul><li data-en="Element types: Fire, Earth, Dark">属性：火、土、暗</li><li data-en="Weather: Prismana Flow possible">天气：可能触发棱晶流</li></ul></div>
+      <div class="map-card r-sky"><div class="map-head"><div class="num">06</div><h4 data-en="Sky-Floating Metropolis">天空浮城</h4></div><p data-en="A metropolis floating in the sky. Meet other Pathfinders, access shops, and social hubs. Reach by gliding from high points.">漂浮在天空中的大都市。与其他探路者相遇，访问商店和社交枢纽。从高处滑翔到达。</p><ul><li data-en="Social hub: Meet other players">社交：遇见其他玩家</li><li data-en="Movement: Glide to reach">移动：滑翔到达</li></ul></div>
+      <div class="map-card r-coast"><div class="map-head"><div class="num">07</div><h4 data-en="Lost Isles">失落群岛</h4></div><p data-en="The PvPvE Egg Heist zone. 3-player teams compete for rare eggs. Unlock at Veteran Pathfinder level.">PVEVP夺蛋模式区域。3人组队争夺稀有蛋。达到资深探路者解锁。</p><ul><li data-en="Mode: Egg Heist (PvPvE)">模式：夺蛋 (PVEVP)</li><li data-en="Unlock: Veteran Pathfinder">解锁：资深探路者</li></ul></div>
+      <div class="map-card r-forest"><div class="map-head"><div class="num">08</div><h4 data-en="Echoback Landing">回声码头</h4></div><p data-en="A landing zone with mixed terrain. Emberpup habitat confirmed. Transition area between biomes.">混合地形的中转区。确认有炽焰犬出没。生物群落间的过渡区域。</p><ul><li data-en="Element types: Mixed">属性：混合</li><li data-en="Notable: Emberpup habitat">特点：炽焰犬栖息地</li></ul></div>
+    </div>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:12px" data-en="[待核实] The CB2 beta showed 15 named regions total. 7 more are confirmed to exist but detailed info is not yet public. Full region list will be updated after launch.">[待核实] CB2 测试显示共15个命名区域。另有7个已确认存在但详细资料尚未公开。完整区域列表将在上线后更新。</p>
+
+    <!-- Movement -->
+    <div style="margin-top:40px">
+      <span class="eyebrow" data-en="Movement">移动方式</span>
+      <h2 class="title" data-en="Explore Every Corner">探索每个角落</h2>
+      <p class="subtitle" data-en="Twine with the right Aniimo to unlock movement abilities. Some areas are only reachable by gliding, diving, or burrowing.">与合适的伊莫共鸣解锁移动能力。部分区域只能通过滑翔、潜水或钻地到达。</p>
+      <div class="feature-grid">
+        <div class="fcard"><h4 data-en="Glide">滑翔</h4><p data-en="Transform into a wind-type Aniimo to glide through skies. Essential for reaching the Sky-Floating Metropolis and crossing gaps.">变成风属性伊莫滑翔天际。到达天空浮城和跨越断崖的必备能力。</p></div>
+        <div class="fcard"><h4 data-en="Dive">潜水</h4><p data-en="Water-type Twine lets you dive into the depths. Explore underwater areas in The Argent Strait and other coastal regions.">水属性共鸣让你潜入深海。探索银白海峡等沿海区域的水下世界。</p></div>
+        <div class="fcard"><h4 data-en="Burrow">钻地</h4><p data-en="Earth-type Aniimo can burrow underground. Discover hidden tunnels and secret areas beneath the surface.">土属性伊莫可以钻地。发现地表之下的隐藏隧道和秘密区域。</p></div>
+        <div class="fcard"><h4 data-en="Climb & Race">攀爬与竞速</h4><p data-en="Scale cliffs, race across terrain. Your exploration style shapes the adventure — every puzzle offers multiple solutions.">攀爬山崖，穿越地形竞速。你的探索风格决定冒险方式——每个谜题都有多种解法。</p></div>
+      </div>
+    </div>
+
+    <!-- Weather & Time -->
+    <div style="margin-top:40px">
+      <span class="eyebrow" data-en="Weather & Time">天气与时间</span>
+      <h2 class="title" data-en="Living Ecosystem">活生生的生态系统</h2>
+      <p class="subtitle" data-en="Aniimo appear based on environment, weather, phenomena, and time of day. Rain weakens fire abilities. Nocturnal Aniimo emerge after dark. The world breathes with authenticity.">伊莫根据环境、天气、现象和时间段出现。下雨削弱火属性能力。夜行伊莫天黑后出没。世界真实地呼吸着。</p>
+      <div class="weather-grid">
+        <div class="weather-card"><div class="w-icon sun"></div><h5 data-en="Daytime">白天</h5><p data-en="Most common Aniimo active. Best time for first exploration and catching.">大部分常见伊莫活跃。首次探索和捕捉的最佳时间。</p></div>
+        <div class="weather-card"><div class="w-icon night"></div><h5 data-en="Nighttime">夜晚</h5><p data-en="Nocturnal Aniimo emerge. Dark and light types more common. Different spawns entirely.">夜行伊莫出没。暗/光属性更常见。刷怪列表完全不同。</p></div>
+        <div class="weather-card"><div class="w-icon rain"></div><h5 data-en="Rain">下雨</h5><p data-en="Rain weakens fire abilities. Water and grass types thrive. Some Aniimo only appear in rain.">下雨削弱火属性。水/草属性变强。部分伊莫只在雨天出现。</p></div>
+        <div class="weather-card"><div class="w-icon storm"></div><h5 data-en="Prismana Flow">棱晶流</h5><p data-en="Special weather state! Triggers rare Prismana-form Aniimo spawns. Forecast appears in Mistwoods and Russet Highlands.">特殊天气状态！触发稀有棱晶形态伊莫。雾林和赤褐高原有预报。</p></div>
+        <div class="weather-card"><div class="w-icon fog"></div><h5 data-en="Fog / Phenomena">雾/现象</h5><p data-en="Environmental phenomena affect spawns. Explore during different conditions to find unique Aniimo.">环境现象影响刷怪。在不同条件下探索以发现独特伊莫。</p></div>
+        <div class="weather-card"><div class="w-icon sun"></div><h5 data-en="High-Potential Areas">高潜力区域</h5><p data-en="Some areas are flagged for 'high-potential Aniimo.' Hunt there for better Potential Score rolls.">部分区域标记「高潜力伊莫出没」。在那里抓到好潜力的概率更高。</p></div>
+      </div>
+    </div>
+
+    <!-- Alpha Bosses -->
+    <div style="margin-top:40px">
+      <span class="eyebrow" data-en="World Bosses">世界Boss</span>
+      <h2 class="title" data-en="Alpha Aniimo">Alpha 伊莫</h2>
+      <p class="subtitle" data-en="Powered-up boss versions of regular Aniimo roam the world. They respawn, some with co-op mechanics. An Omega tier above Alpha also exists.">普通伊莫的强化Boss版在世界中游荡。会刷新，部分需协作挑战。Alpha之上还存在 Omega 级别。</p>
+      <div class="team-grid">
+        <div class="team-card t-fire"><h4 data-en="Alpha Luminelle">Alpha 光精灵</h4><p data-en="Electric-type support boss. High HP and REGEN. Co-op fight recommended.">电属性辅助Boss。高血量和回复。建议协作挑战。</p></div>
+        <div class="team-card t-dark"><h4 data-en="Alpha Ignitis">Alpha 暗袭</h4><p data-en="Dark DPS boss with ATK 128. Extremely dangerous in melee range. Bring a Break Aniimo.">暗属性输出Boss，攻击力128。近身极度危险。带好破防伊莫。</p></div>
+        <div class="team-card t-water"><h4 data-en="Alpha Sherro">Alpha 谢罗</h4><p data-en="Water DPS boss. Nova stage stats with balanced offense and defense.">水属性输出Boss。Nova阶段属性，攻防均衡。</p></div>
+        <div class="team-card t-fire"><h4 data-en="Alpha Blazen">Alpha 烈焰兽</h4><p data-en="Electric/Dark Break boss. BREAK 104 — can shatter your poise quickly.">电/暗破防Boss。BREAK 104——能迅速打碎你的架势。</p></div>
+      </div>
+      <p style="font-size:13px;color:var(--ink-soft);margin-top:12px" data-en="[待核实] Players report you can attempt to catch an Alpha after beating it, but this is not officially confirmed. Treat as a lead, not a guarantee.">[待核实] 玩家报告击败Alpha后可以尝试捕捉，但官方未确认。请视为线索而非保证。</p>
+    </div>
+
+    <!-- Sparkling -->
+    <div style="margin-top:40px">
+      <span class="eyebrow" data-en="Rare Encounters">稀有遭遇</span>
+      <h2 class="title" data-en="Sparkling Aniimo">闪光伊莫</h2>
+      <p class="subtitle" data-en="Ultra-rare variant of any Aniimo. The chase catches. At 80% Collection Progress, you unlock a perk that alerts you when a Sparkling is nearby.">任何伊莫的超稀有变体。终极追求。收集进度达80%时解锁附近闪光伊莫提醒功能。</p>
+      <div class="feature-grid">
+        <div class="fcard"><h4 data-en="What are Sparklings?">什么是闪光伊莫？</h4><p data-en="An ultra-rare visual variant. Community rumors say they come with a rare trait pre-unlocked, but this has no official source.">超稀有的外观变体。社区传言自带稀有特性，但无官方来源。</p></div>
+        <div class="fcard"><h4 data-en="How to Find Them">如何发现</h4><p data-en="Reach 80% Collection Progress to unlock the Apex alert system. Time your hunting around live events that boost Sparkling spawn rates.">收集进度达80%解锁Apex提醒系统。在提升闪光刷新率的限时活动期间集中狩猎。</p></div>
+        <div class="fcard"><h4 data-en="Sparkling Cube">闪光方块</h4><p data-en="A Sparkling Cube Aniipod guarantees a Sparkling Aniimo. Save it for a creature you truly want.">闪光方块伊莫球保证捕捉到闪光伊莫。留给真正想要的生物。</p></div>
+      </div>
+    </div>
+
+    <div class="data-source">
+      <b data-en="Data Sources">数据来源</b>：<span data-en="Official Beta Survival Handbook, Steam store page, aniimotools.dev map & farming guide. Region details partially from CB2 beta — 15 regions confirmed but not all fully documented. Alpha boss names from official update notices. Verified 2026-07-25.">官方Beta生存手册、Steam商店页、aniimotools.dev地图与农场指南。区域详情部分来自CB2测试——15个区域已确认但并非全部完整记录。Alpha Boss名称来自官方更新公告。核对日期：2026-07-25。</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand" style="color:#fff"><span class="logo">A</span><span data-en="Aniimo Guide">伊莫攻略站</span></a>
+        <p data-i18n="foot.branddesc">《伊莫》中英双语攻略站，原创整理，持续更新。</p>
+        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to Pawprint Studio.">本站为玩家非营利性攻略站，游戏版权归 Pawprint Studio 所有。</p>
+      </div>
+      <div><h4 data-i18n="foot.nav">攻略导航</h4><a href="getting-started.html" data-en="Beginner">新手入门</a><a href="creatures.html" data-en="Codex">伊莫图鉴</a><a href="combat.html" data-en="Combat">战斗系统</a></div>
+      <div><h4 data-i18n="foot.systems">系统攻略</h4><a href="breeding.html" data-en="Breeding">培育养成</a><a href="explore.html" data-en="Explore">世界探索</a><a href="homeland.html" data-en="Homeland">家园建造</a></div>
+      <div><h4 data-i18n="foot.about">关于</h4><a href="#" data-i18n="foot.aboutus">关于本站</a><a href="#" data-i18n="foot.feedback">投稿反馈</a><a href="#" data-i18n="foot.changelog">更新日志</a></div>
+    </div>
+    <div class="foot-bottom" data-i18n="foot.copy">© 2026 伊莫攻略站 · Aniimo Bilingual Guide · 仅供学习交流</div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="返回顶部" data-en="Top">顶部</button>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel">
+    <div class="search-input-wrap">
+      <span class="s-ico"></span>
+      <input type="text" placeholder="搜索伊莫、属性、攻略…">
+      <button class="search-close" aria-label="关闭">×</button>
+    </div>
+    <div class="search-results"></div>
+  </div>
+</div>
+<script src="js/common.js"></script>
+</body>
+</html>

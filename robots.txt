@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aniimo-guide.example.com/sitemap.xml

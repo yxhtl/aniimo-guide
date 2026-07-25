@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>战斗系统：属性克制与配队 | 伊莫 Aniimo 攻略</title>
+<meta name="description" content="伊莫战斗系统攻略：9种属性完整克制关系表（非双向机制）、指挥/共鸣双模式、5种战斗定位、配队思路、夺蛋PVEVP模式详解。">
+<meta name="keywords" content="伊莫战斗,Aniimo combat,属性克制,type chart,配队,PVEVP,夺蛋,Egg Heist,共鸣,Twine,破防,Break">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"伊莫战斗系统攻略","inLanguage":"zh-CN","about":"属性克制、配队与PVEVP模式","isPartOf":{"@type":"WebSite","name":"伊莫攻略站"}}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="logo">A</span><span data-i18n="brand">伊莫攻略站</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="getting-started.html" data-i18n="nav.getting-started">新手入门</a>
+      <a href="creatures.html" data-i18n="nav.creatures">伊莫图鉴</a>
+      <a href="combat.html" class="active" data-i18n="nav.combat">战斗系统</a>
+      <a href="breeding.html" data-i18n="nav.breeding">培育养成</a>
+      <a href="explore.html" data-i18n="nav.explore">世界探索</a>
+      <a href="homeland.html" data-i18n="nav.homeland">家园建造</a>
+    </nav>
+    <div class="nav-utils">
+      <button class="nav-btn search-btn" aria-label="搜索"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+      <button class="nav-btn dark-btn" aria-label="暗色模式"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="nav-btn lang-btn" aria-label="语言">English</button>
+      <a href="index.html" class="nav-cta" data-i18n="nav.cta.home">返回首页</a>
+    </div>
+    <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section id="top" style="padding-top:54px">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html" data-en="Home">首页</a> <span>›</span> <span data-en="Combat">战斗系统</span></div>
+    <span class="eyebrow" data-en="Combat System">战斗系统</span>
+    <h2 class="title" data-en="Type Chart, Modes & Team Building">属性克制、模式与配队</h2>
+    <p class="subtitle" data-en="Aniimo's combat is real-time with a non-bidirectional type system. Master the 9-element chart, dual combat modes, and the 5 roles to win.">伊莫的战斗是实时的，属性克制是非双向的。掌握9种属性关系、两种战斗模式和5种定位，才能赢。</p>
+
+    <!-- Combat Modes -->
+    <div class="feature-grid" style="margin-bottom:40px">
+      <div class="fcard"><h4 data-en="Command Mode">指挥模式</h4><p data-en="Stay as the Pathfinder and strategically coordinate skills. Direct your Aniimo in tactical battles, trainer-style. Casuals can win whole fights from this mode.">以探路者身份指挥伊莫进行策略战斗，像训练师一样下达指令。休闲玩家用这模式就能打通大部分内容。</p></div>
+      <div class="fcard"><h4 data-en="Twine Mode">共鸣模式</h4><p data-en="Transform into your Aniimo and unleash real-time combat with dynamic combos! You move and fight with the Aniimo's own abilities. Essential for hard content.">与伊莫共鸣合体，直接操控战斗，释放实时连招！以伊莫的技能和移动方式作战。高难内容必须掌握。</p></div>
+      <div class="fcard"><h4 data-en="Break Mechanic">破防机制</h4><p data-en="Dealing Break damage staggers enemies AND raises capture chance. A Break Aniimo pulls double duty: opens damage windows for DPS and softens targets for catching.">打出 Break 伤害能破防敌人，同时提升捕捉率。破防伊莫一箭双雕：为输出创造窗口，为捕捉铺路。</p></div>
+    </div>
+
+    <!-- Type Chart -->
+    <span class="eyebrow" data-en="Type Effectiveness">属性克制</span>
+    <h2 class="title" data-en="9-Element Type Chart">九大属性克制表</h2>
+    <p class="subtitle" data-en="Aniimo's type chart is NON-bidirectional: Fire beats Grass, but Grass does NOT beat Fire. Only 3 multipliers: 1.6x super effective, 1x neutral, 0.625x resisted. No immunities. Same-type vs same-type is always resisted.">伊莫的属性克制是<b>非双向</b>的：火克草，但草不克火。只有3个倍率：1.6x 强效、1x 中性、0.625x 抵抗。没有免疫。同属性打同属性必定抵抗。</p>
+
+    <div class="type-chart-wrap">
+      <div class="type-chart">
+        <table>
+          <thead><tr><th>攻击 / 防御</th><th class="atk"><span class="type-badge t-fire">火</span></th><th class="atk"><span class="type-badge t-water">水</span></th><th class="atk"><span class="type-badge t-grass">草</span></th><th class="atk"><span class="type-badge t-electric">电</span></th><th class="atk"><span class="type-badge t-ice">冰</span></th><th class="atk"><span class="type-badge t-earth">土</span></th><th class="atk"><span class="type-badge t-wind">风</span></th><th class="atk"><span class="type-badge t-light">光</span></th><th class="atk"><span class="type-badge t-dark">暗</span></th></tr></thead>
+          <tbody>
+            <tr><td class="row-head"><span class="type-badge t-fire">火 Fire</span></td><td><span class="nn">0.625</span></td><td><span class="nn">0.625</span></td><td><span class="se">1.6</span></td><td>1.0</td><td><span class="se">1.6</span></td><td><span class="nn">0.625</span></td><td>1.0</td><td><span class="nn">0.625</span></td><td>1.0</td></tr>
+            <tr><td class="row-head"><span class="type-badge t-water">水 Water</span></td><td><span class="se">1.6</span></td><td><span class="nn">0.625</span></td><td><span class="nn">0.625</span></td><td>1.0</td><td><span class="nn">0.625</span></td><td><span class="se">1.6</span></td><td>1.0</td><td><span class="nn">0.625</span></td><td>1.0</td></tr>
+            <tr><td class="row-head"><span class="type-badge t-grass">草 Grass</span></td><td><span class="nn">0.625</span></td><td><span class="se">1.6</span></td><td><span class="nn">0.625</span></td><td>1.0</td><td>1.0</td><td><span class="se">1.6</span></td><td>1.0</td><td><span class="nn">0.625</span></td><td>1.0</td></tr>
+            <tr><td class="row-head"><span class="type-badge t-electric">电 Lightning</span></td><td>1.0</td><td><span class="se">1.6</span></td><td>1.0</td><td><span class="nn">0.625</span></td><td><span class="nn">0.625</span></td><td><span class="nn">0.625</span></td><td><span class="se">1.6</span></td><td>1.0</td><td>1.0</td></tr>
+            <tr><td class="row-head"><span class="type-badge t-ice">冰 Ice</span></td><td><span class="nn">0.625</span></td><td><span class="se">1.6</span></td><td>1.0</td><td><span class="se">1.6</span></td><td><span class="nn">0.625</span></td><td><span class="nn">0.625</span></td><td><span class="nn">0.625</span></td><td>1.0</td><td>1.0</td></tr>
+            <tr><td class="row-head"><span class="type-badge t-earth">土 Earth</span></td><td>1.0</td><td><span class="nn">0.625</span></td><td><span class="nn">0.625</span></td><td><span class="se">1.6</span></td><td><span class="se">1.6</span></td><td><span class="nn">0.625</span></td><td>1.0</td><td>1.0</td><td><span class="nn">0.625</span></td></tr>
+            <tr><td class="row-head"><span class="type-badge t-wind">风 Wind</span></td><td>1.0</td><td>1.0</td><td><span class="se">1.6</span></td><td><span class="nn">0.625</span></td><td>1.0</td><td>1.0</td><td><span class="nn">0.625</span></td><td>1.0</td><td><span class="se">1.6</span></td></tr>
+            <tr><td class="row-head"><span class="type-badge t-light">光 Light</span></td><td>1.0</td><td>1.0</td><td>1.0</td><td><span class="nn">0.625</span></td><td>1.0</td><td>1.0</td><td><span class="se">1.6</span></td><td><span class="nn">0.625</span></td><td><span class="se">1.6</span></td></tr>
+            <tr><td class="row-head"><span class="type-badge t-dark">暗 Dark</span></td><td><span class="se">1.6</span></td><td><span class="nn">0.625</span></td><td><span class="se">1.6</span></td><td>1.0</td><td>1.0</td><td>1.0</td><td><span class="nn">0.625</span></td><td><span class="se">1.6</span></td><td>1.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:8px"><span class="se" style="color:#2e7d32;font-weight:800">1.6</span> = 强效 Super Effective &nbsp;·&nbsp; <span style="font-weight:800">1.0</span> = 中性 Neutral &nbsp;·&nbsp; <span class="nn" style="color:var(--ink-soft);font-weight:800">0.625</span> = 抵抗 Resisted</p>
+
+    <!-- Quick reference -->
+    <div class="feature-grid" style="margin-top:34px">
+      <div class="fcard"><h4 data-en="Strong Against Summary">克制速查</h4><ul>
+        <li><span class="type-badge t-fire">火</span> → 克 <span class="type-badge t-grass">草</span> <span class="type-badge t-ice">冰</span></li>
+        <li><span class="type-badge t-water">水</span> → 克 <span class="type-badge t-fire">火</span> <span class="type-badge t-earth">土</span></li>
+        <li><span class="type-badge t-grass">草</span> → 克 <span class="type-badge t-water">水</span> <span class="type-badge t-earth">土</span></li>
+        <li><span class="type-badge t-electric">电</span> → 克 <span class="type-badge t-water">水</span> <span class="type-badge t-wind">风</span></li>
+        <li><span class="type-badge t-ice">冰</span> → 克 <span class="type-badge t-water">水</span> <span class="type-badge t-electric">电</span></li>
+        <li><span class="type-badge t-earth">土</span> → 克 <span class="type-badge t-electric">电</span> <span class="type-badge t-ice">冰</span></li>
+        <li><span class="type-badge t-wind">风</span> → 克 <span class="type-badge t-grass">草</span> <span class="type-badge t-dark">暗</span></li>
+        <li><span class="type-badge t-light">光</span> → 克 <span class="type-badge t-wind">风</span> <span class="type-badge t-dark">暗</span></li>
+        <li><span class="type-badge t-dark">暗</span> → 克 <span class="type-badge t-fire">火</span> <span class="type-badge t-grass">草</span> <span class="type-badge t-light">光</span> <b style="color:var(--coral)">(3系!)</b></li>
+      </ul></div>
+      <div class="fcard"><h4 data-en="Dual-Typing Note">双属性说明</h4><p data-en="Some Aniimo carry two elements. Dual-typing widens both what they resist AND what they're weak to. Check each creature's types in the Codex.">部分伊莫拥有双属性。双属性扩大了抵抗范围，但也增加了弱点。在图鉴页查看每只伊莫的属性。</p><p style="margin-top:8px" data-en="Confirmed dual-types include: Inferlupa (Fire/Dark), Glacy (Water/Ice), Leafy (Grass/Water), Budclaw (Earth/Grass), Somniwing (Wind/Grass), Lavazar (Fire/Earth), etc.">已确认双属性：炼狱狼(火/暗)、冰璃(水/冰)、叶叶(草/水)、芽爪(土/草)、梦翼(风/草)、熔岩虫(火/土)等。</p></div>
+      <div class="fcard"><h4 data-en="5 Combat Roles">5种战斗定位</h4><ul>
+        <li data-en="<b>DPS</b>: damage core — invest first"><b>输出</b>：伤害核心，优先投入</li>
+        <li data-en="<b>Break</b>: cracks poise, opens damage windows, raises catch rate"><b>破防</b>：破防开窗，提升捕捉率</li>
+        <li data-en="<b>Heal</b>: keeps team alive in long fights"><b>治疗</b>：长线作战保命</li>
+        <li data-en="<b>Support</b>: buffs and debuffs"><b>辅助</b>：增益减益</li>
+        <li data-en="<b>Regen</b>: grind out sustain over time"><b>回复</b>：持续续航</li>
+      </ul></div>
+    </div>
+
+    <!-- Team Building -->
+    <div style="margin-top:40px">
+      <span class="eyebrow" data-en="Team Building">配队思路</span>
+      <h2 class="title" data-en="Team Composition Strategies">配队搭配策略</h2>
+      <p class="subtitle" data-en="A balanced roster is key. Core: Break → DPS → sustain. Cover at least 3 elements for type advantage.">全队均衡是关键。核心思路：破防 → 输出 → 续航。至少覆盖3种属性确保克制优势。</p>
+      <div class="team-grid">
+        <div class="team-card t-fire"><h4 data-en="Fire Break Core">火系破防核心</h4><p data-en="Inferlupa (Break) + Scorchhowl (DPS) + Skippy (Heal). Fire covers Grass/Ice, Inferlupa's 113 BREAK opens windows for Scorchhowl's 115 ATK.">炼狱狼(破防) + 炽嚎(输出) + 跳跳兔(治疗)。火系克草/冰，炼狱狼113 BREAK为炽嚎115 ATK创造输出窗口。</p><div class="team-members"><span>Inferlupa</span><span>Scorchhowl</span><span>Skippy</span></div></div>
+        <div class="team-card t-dark"><h4 data-en="Dark Triple-Threat">暗系三克优势</h4><p data-en="Ignitis (DPS) + Pawney (DPS) + Celestis (DPS). Dark beats 3 elements (Fire/Grass/Light) — strongest offensive coverage. Pair with a healer.">暗袭(输出) + 勇骑(输出) + 星角(输出)。暗系克3系(火/草/光)——进攻覆盖最广。搭配治疗使用。</p><div class="team-members"><span>Ignitis</span><span>Pawney</span><span>Celestis</span></div></div>
+        <div class="team-card t-grass"><h4 data-en="Grass Regen Sustain">草系回复续航</h4><p data-en="Leafy (Regen, 120HP/106REGEN) + Witchin (Regen) + Tuckin (Break). Grind out long fights with exceptional sustain.">叶叶(回复,120HP/106回复) + 巫草(回复) + 吞吞兽(破防)。超高续航磨死对手。</p><div class="team-members"><span>Leafy</span><span>Witchin</span><span>Tuckin</span></div></div>
+        <div class="team-card"><h4 data-en="Balanced Element Coverage">均衡属性覆盖</h4><p data-en="Tubster (Break/Wind) + Ignitis (DPS/Dark) + Glacy (Heal/Water-Ice). Covers 4 elements, balanced offense/defense/sustain.">圆桶兽(破防/风) + 暗袭(输出/暗) + 冰璃(治疗/水冰)。覆盖4属性，攻防奶均衡。</p><div class="team-members"><span>Tubster</span><span>Ignitis</span><span>Glacy</span></div></div>
+      </div>
+    </div>
+
+    <!-- Egg Heist -->
+    <div style="margin-top:40px">
+      <span class="eyebrow" data-en="PvPvE Mode">PVEVP模式</span>
+      <h2 class="title" data-en="Egg Heist: Egg-Stealing PvPvE">夺蛋模式：实时PVEVP</h2>
+      <p class="subtitle" data-en="Team up in 3-player squads, infiltrate the Lost Isles, and compete to seize the Giant Darkler Egg. Unlock at Veteran Pathfinder level.">3人组队潜入失落群岛，争夺巨型暗影蛋。需达到资深探路者等级解锁。</p>
+      <div class="mode-grid">
+        <div class="mode-card"><span class="mode-tag pvevp" data-en="PvPvE">PVEVP</span><h4 data-en="The Loop">玩法循环</h4><p data-en="1. Stock up on supplies → 2. Infiltrate the forbidden area → 3. Compete to seize the Giant Darkler Egg → 4. Evacuate safely. The egg carries a chance for the new Darkler form Aniimo.">1. 收集补给 → 2. 潜入禁区 → 3. 争夺巨型暗影蛋 → 4. 安全撤离。蛋有概率孵化全新暗影形态伊莫。</p></div>
+        <div class="mode-card"><span class="mode-tag pvevp" data-en="Evacuation">撤离规则</span><h4 data-en="Safe Evac = Shared Haul">安全撤离 = 共享战利品</h4><p data-en="If the whole team evacuates safely, submitted eggs are shared across the squad. If evac fails, you keep only your own eggs. A cautious 'submit one and run' strategy is viable.">全队安全撤离：蛋在全队间共享。撤离失败：只保留个人蛋。保守的「交一颗就跑」策略完全可行。</p></div>
+        <div class="mode-card"><span class="mode-tag pvp" data-en="Rune Disabled">符文禁用</span><h4 data-en="No Runes in Heist">夺蛋模式禁用符文</h4><p data-en="Rune effects on carried items are disabled inside Egg Heist. Only active in Team Mode. Don't count on a rune-stacked loadout — the mode flattens that advantage.">夺蛋模式中携带物品的符文效果禁用，仅在组队模式生效。别指望靠符文碾压——模式设计刻意抹平这种优势。</p></div>
+        <div class="mode-card"><span class="mode-tag pve" data-en="Economy">经济系统</span><h4 data-en="Eggshell Coins Shop">蛋壳币商店</h4><p data-en="Egg Heist has its own currency (Eggshell Coins) and storefront with weekly Egg Voucher exchanges (up to 10x per type). A repeatable weekly grind feeding a dedicated shop.">夺蛋有专属货币（蛋壳币）和商店，每周可用蛋券兑换（每类上限10次）。可重复刷的周常循环。</p></div>
+      </div>
+    </div>
+
+    <!-- EP System -->
+    <div style="margin-top:40px">
+      <span class="eyebrow" data-en="Energy System">能量系统</span>
+      <h2 class="title" data-en="EP (Energy Points) Management">EP能量管理</h2>
+      <p class="subtitle" data-en="Skills consume EP. Some skills spend it in bursts (e.g. Somniwing's Energy Orb consumes 10 EP every 0.6s to scale damage up to 4x). EP capacity can grow via traits.">技能消耗EP。部分技能持续消耗（如梦翼的能量球每0.6秒消耗10EP，伤害最高叠加4倍）。EP上限可通过特性提升。</p>
+      <div class="stat-grid">
+        <div class="stat-pill"><b>0</b><span data-en="Free skills cost 0 EP">免费技能0EP</span></div>
+        <div class="stat-pill"><b>10</b><span data-en="Common skill cost">常见技能消耗</span></div>
+        <div class="stat-pill"><b>+20</b><span data-en="Team EP cap boost (Full Energy trait)">全队能量上限提升(特性)</span></div>
+        <div class="stat-pill"><b>4x</b><span data-en="Max charge multiplier">最大蓄力倍率</span></div>
+      </div>
+    </div>
+
+    <div class="data-source">
+      <b data-en="Data Sources">数据来源</b>：<span data-en="Official Beta Survival Handbook, aniimotools.dev type chart & combat guide, in-game Type Matchup panel. Verified 2026-07-25. Multiplier values (1.6x/0.625x) are beta-build figures, may be retuned at launch.">官方Beta生存手册、aniimotools.dev属性表与战斗指南、游戏内属性面板。核对日期：2026-07-25。倍率值(1.6x/0.625x)为Beta测试数据，上线可能调整。</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand" style="color:#fff"><span class="logo">A</span><span data-en="Aniimo Guide">伊莫攻略站</span></a>
+        <p data-i18n="foot.branddesc">《伊莫》中英双语攻略站，原创整理，持续更新。</p>
+        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to Pawprint Studio.">本站为玩家非营利性攻略站，游戏版权归 Pawprint Studio 所有。</p>
+      </div>
+      <div><h4 data-i18n="foot.nav">攻略导航</h4><a href="getting-started.html" data-en="Beginner">新手入门</a><a href="creatures.html" data-en="Codex">伊莫图鉴</a><a href="combat.html" data-en="Combat">战斗系统</a></div>
+      <div><h4 data-i18n="foot.systems">系统攻略</h4><a href="breeding.html" data-en="Breeding">培育养成</a><a href="explore.html" data-en="Explore">世界探索</a><a href="homeland.html" data-en="Homeland">家园建造</a></div>
+      <div><h4 data-i18n="foot.about">关于</h4><a href="#" data-i18n="foot.aboutus">关于本站</a><a href="#" data-i18n="foot.feedback">投稿反馈</a><a href="#" data-i18n="foot.changelog">更新日志</a></div>
+    </div>
+    <div class="foot-bottom" data-i18n="foot.copy">© 2026 伊莫攻略站 · Aniimo Bilingual Guide · 仅供学习交流</div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="返回顶部" data-en="Top">顶部</button>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel">
+    <div class="search-input-wrap">
+      <span class="s-ico"></span>
+      <input type="text" placeholder="搜索伊莫、属性、攻略…">
+      <button class="search-close" aria-label="关闭">×</button>
+    </div>
+    <div class="search-results"></div>
+  </div>
+</div>
+<script src="js/common.js"></script>
+</body>
+</html>

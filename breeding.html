@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>培育养成：潜力值与共鸣训练 | 伊莫 Aniimo 攻略</title>
+<meta name="description" content="伊莫培育养成深度攻略：潜力评级(Common→Perfect)、先天/后天潜力、MBTI性格特性、共鸣训练、六维属性、进化路线、免费强化路径详解。">
+<meta name="keywords" content="伊莫培育,Aniimo breeding,潜力值,Potential,共鸣训练,Resonance Training,性格,MBTI,进化,Lumin,Gamma,Nova,经验宝石">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"伊莫培育养成攻略","inLanguage":"zh-CN","about":"潜力值、共鸣训练与性格特性","isPartOf":{"@type":"WebSite","name":"伊莫攻略站"}}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="logo">A</span><span data-i18n="brand">伊莫攻略站</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="getting-started.html" data-i18n="nav.getting-started">新手入门</a>
+      <a href="creatures.html" data-i18n="nav.creatures">伊莫图鉴</a>
+      <a href="combat.html" data-i18n="nav.combat">战斗系统</a>
+      <a href="breeding.html" class="active" data-i18n="nav.breeding">培育养成</a>
+      <a href="explore.html" data-i18n="nav.explore">世界探索</a>
+      <a href="homeland.html" data-i18n="nav.homeland">家园建造</a>
+    </nav>
+    <div class="nav-utils">
+      <button class="nav-btn search-btn" aria-label="搜索"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+      <button class="nav-btn dark-btn" aria-label="暗色模式"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="nav-btn lang-btn" aria-label="语言">English</button>
+      <a href="index.html" class="nav-cta" data-i18n="nav.cta.home">返回首页</a>
+    </div>
+    <button class="burger" id="burger" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section id="top" style="padding-top:54px">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html" data-en="Home">首页</a> <span>›</span> <span data-en="Breeding">培育养成</span></div>
+    <span class="eyebrow" data-en="Breeding & Growth">培育养成</span>
+    <h2 class="title" data-en="Potential, Traits & Resonance Training">潜力值、特性与共鸣训练</h2>
+    <p class="subtitle" data-en="Aniimo is NOT gacha. Every power upgrade is earnable for free. Master the Potential Score, MBTI personality traits, and Resonance Training to build your perfect team.">伊莫不是抽卡。所有强化都能免费获得。掌握潜力评级、MBTI性格特性和共鸣训练，打造你的完美队伍。</p>
+
+    <!-- Potential Score -->
+    <span class="eyebrow" data-en="Potential Score">潜力评级</span>
+    <h2 class="title" data-en="The Quality Grade System">品质评级系统</h2>
+    <p class="subtitle" data-en="Every caught Aniimo has an appraised Potential Score from Common to Perfect. It determines the stat ceiling. Appraise early to see what you actually pulled.">每只捕获的伊莫都有潜力评级，从普通到完美。它决定了属性上限。尽早鉴定看看你抓到了什么。</p>
+    <div class="data-table">
+      <table>
+        <thead><tr><th data-en="Grade">评级</th><th data-en="Rarity">稀有度</th><th data-en="Description">说明</th><th data-en="Catch Rate">出现率</th></tr></thead>
+        <tbody>
+          <tr><td><b data-en="Common">普通</b></td><td><span class="ver-tag" style="color:#888;background:#eee">Common</span></td><td data-en="The everyday roll. Functional but low ceiling.">日常水平，能用但上限低。</td><td>~66%</td></tr>
+          <tr><td><b data-en="Good">良好</b></td><td><span class="ver-tag">Good</span></td><td data-en="A solid step up. Usable for most content.">不错的提升，大部分内容够用。</td><td>~26%</td></tr>
+          <tr><td><b data-en="Elite">精英</b></td><td><span class="ver-tag" style="color:var(--azure);background:#E1ECFA">Elite</span></td><td data-en="Genuinely strong. Worth investing in.">确实强，值得投入资源。</td><td>~7%</td></tr>
+          <tr><td><b data-en="Perfect">完美</b></td><td><span class="ver-tag" style="color:var(--coral);background:#FDE8E8">Perfect</span></td><td data-en="The top grade, brutally rare on a wild catch. The endgame chase.">顶级品质，野生极其稀有。终局追求。</td><td>~0.8%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="feature-grid" style="margin-top:30px">
+      <div class="fcard"><h4 data-en="Innate Potential">先天潜力</h4><p data-en="Rolled the moment you catch or hatch. Some areas are flagged for 'high-potential Aniimo' — hunt there for better rolls.">捕捉或孵化时决定。部分区域标记「高潜力伊莫出没」——去那里抓出好货的概率更高。</p></div>
+      <div class="fcard"><h4 data-en="Acquired Potential">后天潜力</h4><p data-en="The part you upgrade afterward, per stat, up to a cap. This is the free path — consumables earned in-game raise growth rates.">后天可提升的部分，按属性有上限。免费路径——用游戏内获得的消耗品提升成长率。</p></div>
+      <div class="fcard"><h4 data-en="Stack the Odds">提高概率</h4><p data-en="Aniipod Ultra guarantees Elite+ Potential. Departure Perfect Eggs hatch Perfect outright. Hunt in flagged areas with your best cube.">Ultra球保底精英级。完美蛋直接孵化完美伊莫。用最好的球在高潜力区域抓。</p></div>
+    </div>
+
+    <!-- MBTI Personality -->
+    <div style="margin-top:40px">
+      <span class="eyebrow" data-en="Personality Traits">性格特性</span>
+      <h2 class="title" data-en="MBTI Personality System">MBTI性格系统</h2>
+      <p class="subtitle" data-en="Every Aniimo has a personality built from 4 MBTI-style axes. Each pole permanently buffs one stat at +3% / +6% / +10% (Somewhat / Relatively / Very). Personality can be rerolled.">每只伊莫有4个MBTI维度组成的性格。每个维度偏向永久提升一项属性+3%/+6%/+10%（略微/较/非常）。性格可重置。</p>
+      <div class="data-table">
+        <table>
+          <thead><tr><th data-en="Axis">维度</th><th data-en="Pole A">极向A</th><th>Buff A</th><th data-en="Pole B">极向B</th><th>Buff B</th></tr></thead>
+          <tbody>
+            <tr><td><b>E / I</b></td><td data-en="E (Extraversion)">E (外向)</td><td><span class="type-badge t-fire">物攻 +%</span></td><td data-en="I (Introversion)">I (内向)</td><td><span class="type-badge t-water">魔攻 +%</span></td></tr>
+            <tr><td><b>S / N</b></td><td data-en="S (Sensing)">S (实感)</td><td><span class="type-badge t-fire">伤害 +%</span></td><td data-en="N (Intuition)">N (直觉)</td><td><span class="type-badge t-electric">暴击率 +%</span></td></tr>
+            <tr><td><b>T / F</b></td><td data-en="T (Thinking)">T (思考)</td><td><span class="type-badge t-earth">物防 +%</span></td><td data-en="F (Feeling)">F (情感)</td><td><span class="type-badge t-water">魔防 +%</span></td></tr>
+            <tr><td><b>J / P</b></td><td data-en="J (Judging)">J (判断)</td><td><span class="type-badge t-grass">血量 +%</span></td><td data-en="P (Perceiving)">P (感知)</td><td><span class="type-badge t-wind">能量 +%</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px;color:var(--ink-soft);margin-top:8px" data-en="There are also named personalities — Clingy, Practical, Aloof, Faithful and more — that carry bespoke bonuses beyond the MBTI axes.">还有具名性格——黏人、务实、冷淡、忠诚等——带有MBTI维度之外的专属加成。</p>
+    </div>
+
+    <!-- Six Stats -->
+    <div style="margin-top:40px">
+      <span class="eyebrow" data-en="Six Stats">六维属性</span>
+      <h2 class="title" data-en="The Six Core Stats">六项核心属性</h2>
+      <p class="subtitle" data-en="Every Aniimo runs on the same six stats. Numbers shown are beta-build values — treat them as directional, not final.">每只伊莫都有相同的六项属性。数值为Beta测试值——仅供参考，非最终版本。</p>
+      <div class="stat-grid">
+        <div class="stat-pill"><b>HP</b><span data-en="Health points">生命值</span></div>
+        <div class="stat-pill"><b>BREAK</b><span data-en="Break power & resistance">破防力与抗性</span></div>
+        <div class="stat-pill"><b>ATK</b><span data-en="Attack power">攻击力</span></div>
+        <div class="stat-pill"><b>P.DEF</b><span data-en="Physical defense">物理防御</span></div>
+        <div class="stat-pill"><b>M.DEF</b><span data-en="Magical defense">魔法防御</span></div>
+        <div class="stat-pill"><b>REGEN</b><span data-en="Recovery rate">回复力</span></div>
+      </div>
+    </div>
+
+    <!-- Resonance Training -->
+    <div style="margin-top:40px">
+      <span class="eyebrow" data-en="Resonance Training">共鸣训练</span>
+      <h2 class="title" data-en="Push Past Level Caps">突破等级上限</h2>
+      <p class="subtitle" data-en="Resonance Training is a level-gated upgrade ladder. Higher tiers unlock as your Aniimo levels up, paid for with graded Astranite material. Experience Gems raise levels directly.">共鸣训练是等级门控的升级阶梯。随伊莫等级提升解锁更高层级，消耗分级星矿材料。经验宝石可直接提升等级。</p>
+      <div class="feature-grid">
+        <div class="fcard"><h4 data-en="Experience Gems">经验宝石</h4><ul>
+          <li data-en="Direct level-up currency">直接升级的消耗品</li>
+          <li data-en="Earn from quests, chests, releasing duplicates">来源：任务、宝箱、放生重复</li>
+          <li data-en="Release refund raised from 50% to 80% in beta">放生返还从50%提升至80%</li>
+          <li data-en="Shop price halved in Jan 29 update">商店价格在1月29日更新中减半</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Astranite Material">星矿材料</h4><ul>
+          <li data-en="Graded material for Resonance Training">分级的共鸣训练材料</li>
+          <li data-en="Dewdrop Crystals → Primegy → Family Crystals">露水结晶 → Primegy → 家族结晶</li>
+          <li data-en="Universal Dewdrop Crystals cover gaps">通用露水结晶补缺</li>
+          <li data-en="Traded via Outpost Vendor Joff">在前哨供应商 Joff 处交易</li>
+        </ul></div>
+        <div class="fcard"><h4 data-en="Evolution Stages">进化阶段</h4><ul>
+          <li data-en="<b>Lumin</b> → base stage"><b>Lumin</b> → 基础阶段</li>
+          <li data-en="<b>Gamma</b> → mid evolution"><b>Gamma</b> → 中间进化</li>
+          <li data-en="<b>Nova</b> → final stage (highest stats)"><b>Nova</b> → 最终阶段（属性最高）</li>
+          <li data-en="Some lines have multi-branch paths (e.g. Inferlupa)">部分有多分支路线（如炼狱狼）</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- Free Path -->
+    <div style="margin-top:40px">
+      <span class="eyebrow" data-en="Free Path">免费强化</span>
+      <h2 class="title" data-en="The Free Path to Perfect">免费达成完美的路径</h2>
+      <p class="subtitle" data-en="Executive Producer Jovi Zhang confirmed: 'Aniimo is definitely not a gacha game.' Monetization is cosmetic only (outfits/costumes). The strongest build of any creature is reachable for free.">执行制作人 Jovi Zhang 确认：「伊莫绝对不是抽卡游戏。」付费仅限外观（服装/装扮）。任何伊莫的最强形态都能免费达成。</p>
+      <div class="mode-grid">
+        <div class="mode-card"><span class="mode-tag pve" data-en="Free">免费</span><h4 data-en="Step 1: Hunt Smart">第一步：聪明地抓</h4><p data-en="Use Aniipod Ultra (guarantees Elite+ Potential) in high-potential flagged areas. Save premium cubes for creatures you care about.">在高潜力标记区域使用 Ultra 球（保底精英级潜力）。把高级球留给真正想要的伊莫。</p></div>
+        <div class="mode-card"><span class="mode-tag pve" data-en="Free">免费</span><h4 data-en="Step 2: Hatch Premium Eggs">第二步：孵优质蛋</h4><p data-en="Departure Perfect Eggs hatch Perfect-potential Aniimo. Elite eggs guarantee Elite-or-higher. Species-specific eggs lock in both species and tier.">完美蛋直接孵化完美潜力伊莫。精英蛋保底精英级以上。物种蛋锁定种类和等级。</p></div>
+        <div class="mode-card"><span class="mode-tag pve" data-en="Free">免费</span><h4 data-en="Step 3: Raise Acquired Potential">第三步：提升后天潜力</h4><p data-en="Use in-game consumables to raise per-stat growth rates (the Acquired half of Potential). This is the core loop, not a paid shortcut.">用游戏内消耗品提升各项成长率（潜力的后天部分）。这是核心循环，不是付费捷径。</p></div>
+        <div class="mode-card"><span class="mode-tag pve" data-en="Free">免费</span><h4 data-en="Step 4: Reroll Personality">第四步：重置性格</h4><p data-en="Reroll MBTI personality toward the stat your build wants. Both levers (growth rate + personality) are part of the free core loop.">重置MBTI性格，使其偏向你需要的属性。成长率和性格都可以免费调整。</p></div>
+      </div>
+    </div>
+
+    <!-- Traits -->
+    <div style="margin-top:40px">
+      <span class="eyebrow" data-en="Traits & Skills">特性与技能</span>
+      <h2 class="title" data-en="Passive Traits & Active Skills">被动特性与主动技能</h2>
+      <div class="feature-grid">
+        <div class="fcard"><h4 data-en="Traits (Passive)">特性（被动）</h4><p data-en="Each Aniimo carries 2 named traits — passive effects shown on its official page. E.g. Emberpup's 'Scorching Flames' increases damage to enemies weak to your element by 15%. Effect percentages are beta-build values.">每只伊莫有2个具名特性——官方页面上显示的被动效果。如炽焰犬的「灼烧烈焰」对属性弱者伤害+15%。百分比为Beta测试值。</p></div>
+        <div class="fcard"><h4 data-en="Skills (Active)">技能（主动）</h4><p data-en="Each Aniimo has a handful of active skills including a basic Attack. Counts vary per creature (Emberpup: 4 skills + 2 traits; Somniwing: 5 skills + 1 trait). Skills list EP cost, power, and element.">每只伊莫有数个主动技能（含普攻）。数量因生物而异（炽焰犬：4技能+2特性；梦翼：5技能+1特性）。技能列出EP消耗、威力和属性。</p></div>
+        <div class="fcard"><h4 data-en="Homeland Ability">家园技能</h4><p data-en="Each Aniimo also has a Homeland skill — a non-combat utility used at your RV camp. E.g. 'Hustle' increases movement speed by consuming stamina.">每只伊莫还有家园技能——在房车营地使用的非战斗功能。如「冲刺」消耗体力提升移动速度。</p></div>
+      </div>
+    </div>
+
+    <div class="data-source">
+      <b data-en="Data Sources">数据来源</b>：<span data-en="Official Aniimo Index (wiki.aniimo.com), aniimotools.dev stats & breeding guides, MMORPG.com EP interview. Some exact values (consumable names, reroll odds, growth-rate numbers) are not yet published officially — labeled [待核实] where uncertain. Verified 2026-07-25.">官方伊莫图鉴 (wiki.aniimo.com)、aniimotools.dev属性与培育指南、MMORPG.com制作人访谈。部分确切数值（消耗品名称、重置概率、成长率数字）官方尚未公开——不确定处标注[待核实]。核对日期：2026-07-25。</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand" style="color:#fff"><span class="logo">A</span><span data-en="Aniimo Guide">伊莫攻略站</span></a>
+        <p data-i18n="foot.branddesc">《伊莫》中英双语攻略站，原创整理，持续更新。</p>
+        <p class="disclaimer" data-en="This is a non-profit fan guide site. Game rights belong to Pawprint Studio.">本站为玩家非营利性攻略站，游戏版权归 Pawprint Studio 所有。</p>
+      </div>
+      <div><h4 data-i18n="foot.nav">攻略导航</h4><a href="getting-started.html" data-en="Beginner">新手入门</a><a href="creatures.html" data-en="Codex">伊莫图鉴</a><a href="combat.html" data-en="Combat">战斗系统</a></div>
+      <div><h4 data-i18n="foot.systems">系统攻略</h4><a href="breeding.html" data-en="Breeding">培育养成</a><a href="explore.html" data-en="Explore">世界探索</a><a href="homeland.html" data-en="Homeland">家园建造</a></div>
+      <div><h4 data-i18n="foot.about">关于</h4><a href="#" data-i18n="foot.aboutus">关于本站</a><a href="#" data-i18n="foot.feedback">投稿反馈</a><a href="#" data-i18n="foot.changelog">更新日志</a></div>
+    </div>
+    <div class="foot-bottom" data-i18n="foot.copy">© 2026 伊莫攻略站 · Aniimo Bilingual Guide · 仅供学习交流</div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="返回顶部" data-en="Top">顶部</button>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-panel">
+    <div class="search-input-wrap">
+      <span class="s-ico"></span>
+      <input type="text" placeholder="搜索伊莫、属性、攻略…">
+      <button class="search-close" aria-label="关闭">×</button>
+    </div>
+    <div class="search-results"></div>
+  </div>
+</div>
+<script src="js/common.js"></script>
+</body>
+</html>
