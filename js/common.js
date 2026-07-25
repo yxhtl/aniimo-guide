@@ -310,8 +310,6 @@
       ov.addEventListener("click", function (e) { if (e.target === ov) closeSearch(); });
       var inp = ov.querySelector("input");
       if (inp) {
-        inp.setAttribute("data-i18n", "search.placeholder");
-        inp.setAttribute("data-i18n-ph", "1");
         inp.addEventListener("input", function () { renderSearch(inp.value); });
       }
       document.addEventListener("keydown", function (e) {
