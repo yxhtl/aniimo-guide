@@ -6,6 +6,11 @@
 <title>战斗系统：属性克制与配队 | 伊莫 Aniimo 攻略</title>
 <meta name="description" content="伊莫战斗系统攻略：9种属性完整克制关系表（非双向机制）、指挥/共鸣双模式、5种战斗定位、配队思路、夺蛋PVEVP模式详解。">
 <meta name="keywords" content="伊莫战斗,Aniimo combat,属性克制,type chart,配队,PVEVP,夺蛋,Egg Heist,共鸣,Twine,破防,Break">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230B3A6B'/><text x='50' y='72' font-size='60' font-weight='900' fill='%2373DBFF' text-anchor='middle' font-family='Arial,sans-serif'>A</text></svg>">
+<meta property="og:title" content="战斗系统：属性克制与配队 | 伊莫 Aniimo 攻略">
+<meta property="og:description" content="伊莫战斗系统攻略：9种属性完整克制关系表（非双向机制）、指挥/共鸣双模式、5种战斗定位、配队思路、夺蛋PVEVP模式详解。">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"伊莫战斗系统攻略","inLanguage":"zh-CN","about":"属性克制、配队与PVEVP模式","isPartOf":{"@type":"WebSite","name":"伊莫攻略站"}}
@@ -56,7 +61,7 @@
     <div class="type-chart-wrap">
       <div class="type-chart">
         <table>
-          <thead><tr><th>攻击 / 防御</th><th class="atk"><span class="type-badge t-fire">火</span></th><th class="atk"><span class="type-badge t-water">水</span></th><th class="atk"><span class="type-badge t-grass">草</span></th><th class="atk"><span class="type-badge t-electric">电</span></th><th class="atk"><span class="type-badge t-ice">冰</span></th><th class="atk"><span class="type-badge t-earth">土</span></th><th class="atk"><span class="type-badge t-wind">风</span></th><th class="atk"><span class="type-badge t-light">光</span></th><th class="atk"><span class="type-badge t-dark">暗</span></th></tr></thead>
+          <thead><tr><th data-en="Atk / Def">攻击 / 防御</th><th class="atk"><span class="type-badge t-fire">火</span></th><th class="atk"><span class="type-badge t-water">水</span></th><th class="atk"><span class="type-badge t-grass">草</span></th><th class="atk"><span class="type-badge t-electric">电</span></th><th class="atk"><span class="type-badge t-ice">冰</span></th><th class="atk"><span class="type-badge t-earth">土</span></th><th class="atk"><span class="type-badge t-wind">风</span></th><th class="atk"><span class="type-badge t-light">光</span></th><th class="atk"><span class="type-badge t-dark">暗</span></th></tr></thead>
           <tbody>
             <tr><td class="row-head"><span class="type-badge t-fire">火 Fire</span></td><td><span class="nn">0.625</span></td><td><span class="nn">0.625</span></td><td><span class="se">1.6</span></td><td>1.0</td><td><span class="se">1.6</span></td><td><span class="nn">0.625</span></td><td>1.0</td><td><span class="nn">0.625</span></td><td>1.0</td></tr>
             <tr><td class="row-head"><span class="type-badge t-water">水 Water</span></td><td><span class="se">1.6</span></td><td><span class="nn">0.625</span></td><td><span class="nn">0.625</span></td><td>1.0</td><td><span class="nn">0.625</span></td><td><span class="se">1.6</span></td><td>1.0</td><td><span class="nn">0.625</span></td><td>1.0</td></tr>
@@ -71,20 +76,20 @@
         </table>
       </div>
     </div>
-    <p style="font-size:13px;color:var(--ink-soft);margin-top:8px"><span class="se" style="color:#2e7d32;font-weight:800">1.6</span> = 强效 Super Effective &nbsp;·&nbsp; <span style="font-weight:800">1.0</span> = 中性 Neutral &nbsp;·&nbsp; <span class="nn" style="color:var(--ink-soft);font-weight:800">0.625</span> = 抵抗 Resisted</p>
+    <p style="font-size:13px;color:var(--ink-soft);margin-top:8px"><span class="se" style="color:#2e7d32;font-weight:800">1.6</span> = <span data-en="Super Effective">强效</span> &nbsp;·&nbsp; <span style="font-weight:800">1.0</span> = <span data-en="Neutral">中性</span> &nbsp;·&nbsp; <span class="nn" style="color:var(--ink-soft);font-weight:800">0.625</span> = <span data-en="Resisted">抵抗</span></p>
 
     <!-- Quick reference -->
     <div class="feature-grid" style="margin-top:34px">
       <div class="fcard"><h4 data-en="Strong Against Summary">克制速查</h4><ul>
-        <li><span class="type-badge t-fire">火</span> → 克 <span class="type-badge t-grass">草</span> <span class="type-badge t-ice">冰</span></li>
-        <li><span class="type-badge t-water">水</span> → 克 <span class="type-badge t-fire">火</span> <span class="type-badge t-earth">土</span></li>
-        <li><span class="type-badge t-grass">草</span> → 克 <span class="type-badge t-water">水</span> <span class="type-badge t-earth">土</span></li>
-        <li><span class="type-badge t-electric">电</span> → 克 <span class="type-badge t-water">水</span> <span class="type-badge t-wind">风</span></li>
-        <li><span class="type-badge t-ice">冰</span> → 克 <span class="type-badge t-water">水</span> <span class="type-badge t-electric">电</span></li>
-        <li><span class="type-badge t-earth">土</span> → 克 <span class="type-badge t-electric">电</span> <span class="type-badge t-ice">冰</span></li>
-        <li><span class="type-badge t-wind">风</span> → 克 <span class="type-badge t-grass">草</span> <span class="type-badge t-dark">暗</span></li>
-        <li><span class="type-badge t-light">光</span> → 克 <span class="type-badge t-wind">风</span> <span class="type-badge t-dark">暗</span></li>
-        <li><span class="type-badge t-dark">暗</span> → 克 <span class="type-badge t-fire">火</span> <span class="type-badge t-grass">草</span> <span class="type-badge t-light">光</span> <b style="color:var(--coral)">(3系!)</b></li>
+        <li><span class="type-badge t-fire">火</span> → <span data-en="beats">克</span> <span class="type-badge t-grass">草</span> <span class="type-badge t-ice">冰</span></li>
+        <li><span class="type-badge t-water">水</span> → <span data-en="beats">克</span> <span class="type-badge t-fire">火</span> <span class="type-badge t-earth">土</span></li>
+        <li><span class="type-badge t-grass">草</span> → <span data-en="beats">克</span> <span class="type-badge t-water">水</span> <span class="type-badge t-earth">土</span></li>
+        <li><span class="type-badge t-electric">电</span> → <span data-en="beats">克</span> <span class="type-badge t-water">水</span> <span class="type-badge t-wind">风</span></li>
+        <li><span class="type-badge t-ice">冰</span> → <span data-en="beats">克</span> <span class="type-badge t-water">水</span> <span class="type-badge t-electric">电</span></li>
+        <li><span class="type-badge t-earth">土</span> → <span data-en="beats">克</span> <span class="type-badge t-electric">电</span> <span class="type-badge t-ice">冰</span></li>
+        <li><span class="type-badge t-wind">风</span> → <span data-en="beats">克</span> <span class="type-badge t-grass">草</span> <span class="type-badge t-dark">暗</span></li>
+        <li><span class="type-badge t-light">光</span> → <span data-en="beats">克</span> <span class="type-badge t-wind">风</span> <span class="type-badge t-dark">暗</span></li>
+        <li><span class="type-badge t-dark">暗</span> → <span data-en="beats">克</span> <span class="type-badge t-fire">火</span> <span class="type-badge t-grass">草</span> <span class="type-badge t-light">光</span> <b style="color:var(--coral)" data-en="(3 types!)">(3系!)</b></li>
       </ul></div>
       <div class="fcard"><h4 data-en="Dual-Typing Note">双属性说明</h4><p data-en="Some Aniimo carry two elements. Dual-typing widens both what they resist AND what they're weak to. Check each creature's types in the Codex.">部分伊莫拥有双属性。双属性扩大了抵抗范围，但也增加了弱点。在图鉴页查看每只伊莫的属性。</p><p style="margin-top:8px" data-en="Confirmed dual-types include: Inferlupa (Fire/Dark), Glacy (Water/Ice), Leafy (Grass/Water), Budclaw (Earth/Grass), Somniwing (Wind/Grass), Lavazar (Fire/Earth), etc.">已确认双属性：炼狱狼(火/暗)、冰璃(水/冰)、叶叶(草/水)、芽爪(土/草)、梦翼(风/草)、熔岩虫(火/土)等。</p></div>
       <div class="fcard"><h4 data-en="5 Combat Roles">5种战斗定位</h4><ul>
@@ -151,7 +156,7 @@
       </div>
       <div><h4 data-i18n="foot.nav">攻略导航</h4><a href="getting-started.html" data-en="Beginner">新手入门</a><a href="creatures.html" data-en="Codex">伊莫图鉴</a><a href="combat.html" data-en="Combat">战斗系统</a></div>
       <div><h4 data-i18n="foot.systems">系统攻略</h4><a href="breeding.html" data-en="Breeding">培育养成</a><a href="explore.html" data-en="Explore">世界探索</a><a href="homeland.html" data-en="Homeland">家园建造</a></div>
-      <div><h4 data-i18n="foot.about">关于</h4><a href="#" data-i18n="foot.aboutus">关于本站</a><a href="#" data-i18n="foot.feedback">投稿反馈</a><a href="#" data-i18n="foot.changelog">更新日志</a></div>
+      <div><h4 data-i18n="foot.about">关于</h4><a href="about.html" data-i18n="foot.aboutus">关于本站</a><a href="https://discord.gg/phDAxhFF9M" target="_blank" rel="noopener" data-i18n="foot.feedback">投稿反馈</a><a href="changelog.html" data-i18n="foot.changelog">更新日志</a></div>
     </div>
     <div class="foot-bottom" data-i18n="foot.copy">© 2026 伊莫攻略站 · Aniimo Bilingual Guide · 仅供学习交流</div>
   </div>

@@ -1,5 +1,9 @@
 /* ===== Aniimo Guide - Common JS ===== */
-/* Dark mode / Language / Global Search / Burger / Back-to-top */
+/* Dark mode / Language / Global Search / Burger / Back-to-top / Codex / Calculator */
+/* Fix #11: search keyboard nav + highlight + expanded index */
+/* Fix #12: dark mode reads prefers-color-scheme */
+/* Fix #16: use textContent instead of innerHTML for data-en switching */
+/* Fix #17: preserve scroll position on language switch */
 (function () {
   "use strict";
 
@@ -8,7 +12,7 @@
   var ICON_SUN = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
   var ICON_MOON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
 
-  /* ---------- i18n dictionary (UI framework) ---------- */
+  /* ---------- i18n dictionary ---------- */
   var I18N = {
     "nav.getting-started": { zh: "新手入门", en: "Beginner" },
     "nav.creatures": { zh: "伊莫图鉴", en: "Codex" },
@@ -21,7 +25,7 @@
     "brand": { zh: "伊莫攻略站", en: "Aniimo Guide" },
     "search.placeholder": { zh: "搜索伊莫、属性、攻略…", en: "Search Aniimo, types, guides…" },
     "search.empty": { zh: "没有找到相关内容", en: "No results found" },
-    "search.hint": { zh: "输入关键词搜索全站攻略", en: "Type to search the whole site" },
+    "search.hint": { zh: "输入关键词搜索全站攻略（↑↓选择，回车跳转）", en: "Type to search (↑↓ to navigate, Enter to go)" },
     "foot.nav": { zh: "攻略导航", en: "Guides" },
     "foot.systems": { zh: "系统攻略", en: "Systems" },
     "foot.about": { zh: "关于", en: "About" },
@@ -33,56 +37,69 @@
     "totype.all": { zh: "全部", en: "All" }
   };
 
-  /* ---------- Search index ---------- */
-  /* Each entry has zh + en fields; search matches both languages, display follows UI lang */
-  var SEARCH_INDEX = [
-    { page: "首页", pageEn: "Home", url: "index.html",
-      title: "伊莫攻略站", titleEn: "Aniimo Guide Home",
-      tags: "伊莫 Aniimo 攻略 首页 捉宠 开放世界 寻路者 伊迪尔", tagsEn: "Aniimo guide home creature-catching open-world pathfinder Idyll" },
-    { page: "新手入门", pageEn: "Beginner", url: "getting-started.html",
-      title: "从零到第一只伊莫", titleEn: "From Zero to First Aniimo",
-      tags: "新手 入门 开荒 时间线 封藏 伊莫球 共鸣 燃爪 探路者 任务", tagsEn: "beginner guide timeline catch aniipod twine pathfinder quest" },
-    { page: "伊莫图鉴", pageEn: "Codex", url: "creatures.html",
-      title: "全伊莫图鉴", titleEn: "Aniimo Codex",
-      tags: "图鉴 伊莫 95只 炽嚎 Scorchhowl 星角 Celestis 浮云 Nimbi 芽爪 Budclaw 潜猪 Susuta 暗袭 Ignitis 勇骑 Pawney 炼狱狼 Inferlupa 波涛兽 Wavwal 珊瑚兽 Coraliz 属性 形态 排行", tagsEn: "codex aniimo 95 scorchhowl celestis nimbi budclaw susuta ignitis pawney inferlupa wavwal coraliz type form stats ranking" },
-    { page: "战斗系统", pageEn: "Combat", url: "combat.html",
-      title: "属性克制与配队指南", titleEn: "Type Chart & Team Building",
-      tags: "战斗 属性 克制 配队 PVEVP 夺蛋 共鸣 实时 火水草电暗风光土光", tagsEn: "combat type chart team pvevp egg-heist twine fire water grass electric dark wind earth light" },
-    { page: "培育养成", pageEn: "Breeding", url: "breeding.html",
-      title: "潜力评级与共鸣训练", titleEn: "Potential Score & Resonance Training",
-      tags: "培育 潜力评级 潜力值 MBTI 性格 共鸣训练 星矿 经验宝石 进化 Lumin Gamma Nova 先天后天 完美 免费", tagsEn: "breeding potential score MBTI personality resonance training astranite experience-gem evolution lumin gamma nova innate acquired perfect free" },
-    { page: "世界探索", pageEn: "Explore", url: "explore.html",
-      title: "伊迪尔大陆区域探索", titleEn: "Idyll Continent Exploration",
-      tags: "探索 地图 区域 伊迪尔 天空都市 滑翔 潜水 钻地 天气 时间 失落群岛", tagsEn: "explore map region Idyll sky-metropolis glide dive burrow weather time lost-isles" },
-    { page: "家园建造", pageEn: "Homeland", url: "homeland.html",
-      title: "房车营地与家园系统", titleEn: "RV Camp & Homeland System",
-      tags: "家园 房车 营地 种植 装饰 升级 战斗属性 篝火 聚会", tagsEn: "homeland RV camp farming decoration upgrade combat-stat campfire gathering" },
-    /* extra searchable anchors */
-    { page: "伊莫图鉴", pageEn: "Codex", url: "creatures.html",
-      title: "炽嚎（Scorchhowl）", titleEn: "Scorchhowl",
-      tags: "No.003 炽嚎 Scorchhowl 火 雷暴形态 棱晶形态", tagsEn: "003 Scorchhowl fire thunderstorm prismana form" },
-    { page: "伊莫图鉴", pageEn: "Codex", url: "creatures.html",
-      title: "星角（Celestis）", titleEn: "Celestis",
-      tags: "No.005 星角 Celestis 暗 萤火 森林", tagsEn: "005 Celestis dark firefly forest" },
-    { page: "伊莫图鉴", pageEn: "Codex", url: "creatures.html",
-      title: "浮云（Nimbi）", titleEn: "Nimbi",
-      tags: "No.018 浮云 Nimbi 风 暴雨形态", tagsEn: "018 Nimbi wind rainstorm form" },
-    { page: "伊莫图鉴", pageEn: "Codex", url: "creatures.html",
-      title: "芽爪（Budclaw）", titleEn: "Budclaw",
-      tags: "No.024 芽爪 Budclaw 土 草 泥滩形态 双属性", tagsEn: "024 Budclaw earth grass mudflat dual-type" },
-    { page: "战斗系统", pageEn: "Combat", url: "combat.html",
-      title: "属性克制表", titleEn: "Type Effectiveness Chart",
-      tags: "属性 克制 表 火克草冰 水克火土 草克水土 电克水风 冰克水电 土克电冰 风克草暗 光克风暗 暗克火草光三系 非双向 1.6倍 0.625倍", tagsEn: "type chart effectiveness fire-grass-ice water-fire-earth grass-water-earth electric-water-wind ice-water-electric earth-electric-ice wind-grass-dark light-wind-dark dark-fire-grass-light-3x non-bidirectional 1.6x 0.625x" },
-    { page: "战斗系统", pageEn: "Combat", url: "combat.html",
-      title: "夺蛋模式（Egg Heist）", titleEn: "Egg Heist Mode",
-      tags: "PVEVP 夺蛋 Egg Heist 3人组队 失落群岛 实时 搜索 战斗 撤离 蛋壳币 暗影蛋", tagsEn: "pvevp egg-heist 3-player lost-isles realtime search battle evacuation eggshell-coin darkler-egg" }
-  ];
+  /* ---------- Build search index from creature data + pages ---------- */
+  function buildSearchIndex() {
+    var idx = [
+      { page: "首页", pageEn: "Home", url: "index.html",
+        title: "伊莫攻略站", titleEn: "Aniimo Guide Home",
+        tags: "伊莫 Aniimo 攻略 首页 捉宠 开放世界 寻路者 伊迪尔", tagsEn: "Aniimo guide home creature-catching open-world pathfinder Idyll" },
+      { page: "新手入门", pageEn: "Beginner", url: "getting-started.html",
+        title: "从零到第一只伊莫", titleEn: "From Zero to First Aniimo",
+        tags: "新手 入门 开荒 时间线 封藏 伊莫球 共鸣 燃爪 探路者 任务", tagsEn: "beginner guide timeline catch aniipod twine pathfinder quest" },
+      { page: "伊莫图鉴", pageEn: "Codex", url: "creatures.html",
+        title: "全伊莫图鉴", titleEn: "Aniimo Codex",
+        tags: "图鉴 伊莫 95只 属性 形态 排行 筛选 计算器 TierList", tagsEn: "codex aniimo 95 type form stats ranking filter calculator tierlist" },
+      { page: "战斗系统", pageEn: "Combat", url: "combat.html",
+        title: "属性克制与配队指南", titleEn: "Type Chart & Team Building",
+        tags: "战斗 属性 克制 配队 PVEVP 夺蛋 共鸣 实时 火水草电暗风光土光", tagsEn: "combat type chart team pvevp egg-heist twine fire water grass electric dark wind earth light" },
+      { page: "培育养成", pageEn: "Breeding", url: "breeding.html",
+        title: "潜力评级与共鸣训练", titleEn: "Potential Score & Resonance Training",
+        tags: "培育 潜力评级 潜力值 MBTI 性格 共鸣训练 星矿 经验宝石 进化 Lumin Gamma Nova 先天后天 完美 免费", tagsEn: "breeding potential score MBTI personality resonance training astranite experience-gem evolution lumin gamma nova innate acquired perfect free" },
+      { page: "世界探索", pageEn: "Explore", url: "explore.html",
+        title: "伊迪尔大陆区域探索", titleEn: "Idyll Continent Exploration",
+        tags: "探索 地图 区域 伊迪尔 天空都市 滑翔 潜水 钻地 天气 时间 失落群岛", tagsEn: "explore map region Idyll sky-metropolis glide dive burrow weather time lost-isles" },
+      { page: "家园建造", pageEn: "Homeland", url: "homeland.html",
+        title: "房车营地与家园系统", titleEn: "RV Camp & Homeland System",
+        tags: "家园 房车 营地 种植 装饰 升级 战斗属性 篝火 聚会", tagsEn: "homeland RV camp farming decoration upgrade combat-stat campfire gathering" },
+      { page: "战斗系统", pageEn: "Combat", url: "combat.html#type-chart",
+        title: "属性克制表", titleEn: "Type Effectiveness Chart",
+        tags: "属性 克制 表 火克草冰 水克火土 草克水土 电克水风 冰克水电 土克电冰 风克草暗 光克风暗 暗克火草光三系 非双向 1.6倍 0.625倍", tagsEn: "type chart effectiveness non-bidirectional 1.6x 0.625x" },
+      { page: "战斗系统", pageEn: "Combat", url: "combat.html#egg-heist",
+        title: "夺蛋模式（Egg Heist）", titleEn: "Egg Heist Mode",
+        tags: "PVEVP 夺蛋 Egg Heist 3人组队 失落群岛 实时 搜索 战斗 撤离 蛋壳币 暗影蛋", tagsEn: "pvevp egg-heist 3-player lost-isles realtime search battle evacuation eggshell-coin darkler-egg" }
+    ];
+    /* Add all 95 creatures to search index */
+    if (typeof CREATURES !== "undefined") {
+      CREATURES.forEach(function (c) {
+        var elName = EL_NAMES[c.el] ? EL_NAMES[c.el][en_or_zh()] : c.el;
+        var elName2 = c.el2 ? " " + (EL_NAMES[c.el2] ? EL_NAMES[c.el2][en_or_zh()] : c.el2) : "";
+        idx.push({
+          page: "伊莫图鉴", pageEn: "Codex", url: "creatures.html#creature-" + c.no,
+          title: c.nameZh + "（" + c.name + "）", titleEn: c.name,
+          tags: "No." + c.no + " " + c.name + " " + c.nameZh + " " + c.el + (c.el2 ? " " + c.el2 : "") + " " + c.role + " " + c.stage + " HP" + c.hp + " ATK" + c.atk + " BREAK" + c.brk,
+          tagsEn: c.no + " " + c.name + " " + c.el + (c.el2 ? " " + c.el2 : "") + " " + c.role + " " + c.stage + " HP" + c.hp + " ATK" + c.atk + " BREAK" + c.brk
+        });
+      });
+    }
+    return idx;
+  }
+
+  function en_or_zh() { return lang === "en" ? "en" : "zh"; }
 
   var lang = localStorage.getItem("aniimo-lang") || "zh";
-  var dark = localStorage.getItem("aniimo-dark") === "1";
+  /* Fix #12: read system preference if no saved preference */
+  var darkSaved = localStorage.getItem("aniimo-dark");
+  var dark = darkSaved === "1" ? true : darkSaved === "0" ? false :
+    (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+  var SEARCH_INDEX = [];
 
   /* ---------- Apply language ---------- */
+  /* Fix #16: use textContent where possible, only use innerHTML for elements that explicitly contain HTML */
+  /* Fix #17: save and restore scroll position */
   function applyLang(l) {
+    var scrollTop = window.scrollY;
+    var scrollLeft = window.scrollX;
     lang = l;
     localStorage.setItem("aniimo-lang", l);
     document.documentElement.lang = l === "zh" ? "zh-CN" : "en";
@@ -97,19 +114,43 @@
     });
 
     /* 2) Page content elements via data-en attribute */
+    /* Fix #16: Use textContent instead of innerHTML to prevent XSS */
     document.querySelectorAll("[data-en]").forEach(function (el) {
       if (l === "en") {
-        if (!el.hasAttribute("data-zh")) el.setAttribute("data-zh", el.innerHTML);
-        el.innerHTML = el.getAttribute("data-en");
+        if (!el.hasAttribute("data-zh")) el.setAttribute("data-zh", el.textContent);
+        /* Check if data-en contains HTML tags - if so, use innerHTML (safe for static content) */
+        var enVal = el.getAttribute("data-en");
+        if (enVal.indexOf("<") !== -1 && enVal.indexOf(">") !== -1) {
+          el.innerHTML = enVal;
+        } else {
+          el.textContent = enVal;
+        }
       } else {
-        if (el.hasAttribute("data-zh")) el.innerHTML = el.getAttribute("data-zh");
+        if (el.hasAttribute("data-zh")) {
+          var zhVal = el.getAttribute("data-zh");
+          if (zhVal.indexOf("<") !== -1 && zhVal.indexOf(">") !== -1) {
+            el.innerHTML = zhVal;
+          } else {
+            el.textContent = zhVal;
+          }
+        }
+      }
+    });
+
+    /* 2b) Handle data-en-ph for placeholder translation */
+    document.querySelectorAll("[data-en-ph]").forEach(function (el) {
+      if (l === "en") {
+        if (!el.hasAttribute("data-zh-ph")) el.setAttribute("data-zh-ph", el.getAttribute("placeholder"));
+        el.setAttribute("placeholder", el.getAttribute("data-en-ph"));
+      } else {
+        if (el.hasAttribute("data-zh-ph")) el.setAttribute("placeholder", el.getAttribute("data-zh-ph"));
       }
     });
 
     var langBtn = document.querySelector(".lang-btn");
     if (langBtn) langBtn.textContent = l === "zh" ? "English" : "中文";
 
-    /* 3) Update aria-labels for accessibility */
+    /* 3) Update aria-labels */
     var ariaMap = {
       ".search-btn": { zh: "搜索", en: "Search" },
       ".dark-btn": { zh: "暗色模式", en: "Toggle dark mode" },
@@ -129,6 +170,15 @@
       var inp = ov.querySelector("input");
       renderSearch(inp ? inp.value : "");
     }
+
+    /* 5) Re-render codex if on creatures page (cards use codexLang) */
+    if (typeof renderCodex === "function") renderCodex();
+
+    /* 6) Translate all type-badge elements by CSS class */
+    translateBadges(l);
+
+    /* Fix #17: restore scroll position */
+    window.scrollTo(scrollLeft, scrollTop);
   }
 
   /* ---------- Apply dark ---------- */
@@ -141,6 +191,7 @@
   }
 
   /* ---------- Search ---------- */
+  /* Fix #11: keyboard navigation + highlight + expanded index */
   function openSearch() {
     var ov = document.getElementById("searchOverlay");
     if (!ov) return;
@@ -152,51 +203,79 @@
     var ov = document.getElementById("searchOverlay");
     if (ov) ov.classList.remove("show");
   }
+
+  function highlightMatch(text, query) {
+    if (!query) return text;
+    var lower = text.toLowerCase();
+    var idx = lower.indexOf(query.toLowerCase());
+    if (idx === -1) return text;
+    return text.substring(0, idx) + '<mark>' + text.substring(idx, idx + query.length) + '</mark>' + text.substring(idx + query.length);
+  }
+
+  var searchSelectedIdx = -1;
+  var currentHits = [];
+
   function renderSearch(q) {
     var box = document.querySelector("#searchOverlay .search-results");
     if (!box) return;
     q = (q || "").trim().toLowerCase();
+    searchSelectedIdx = -1;
     if (!q) {
-      box.innerHTML = '<div class="sr-empty" data-i18n="search.hint">' + t("search.hint") + "</div>";
-      applyLang(lang);
+      box.innerHTML = '<div class="sr-empty">' + t("search.hint") + "</div>";
       return;
     }
-    var hits = [];
+    currentHits = [];
     SEARCH_INDEX.forEach(function (e) {
-      /* search against BOTH zh and en fields so users can search in either language */
       var hay = (e.page + " " + e.title + " " + e.tags + " " +
                  (e.pageEn || "") + " " + (e.titleEn || "") + " " + (e.tagsEn || "")
       ).toLowerCase();
-      if (hay.indexOf(q) !== -1) hits.push(e);
+      if (hay.indexOf(q) !== -1) currentHits.push(e);
     });
-    if (!hits.length) {
+    if (!currentHits.length) {
       box.innerHTML = '<div class="sr-empty">' + t("search.empty") + "</div>";
       return;
     }
     var isEn = lang === "en";
-    box.innerHTML = hits.map(function (e) {
+    box.innerHTML = currentHits.map(function (e, i) {
       var pg = isEn ? (e.pageEn || e.page) : e.page;
       var ti = isEn ? (e.titleEn || e.title) : e.title;
       var tg = isEn ? (e.tagsEn || e.tags) : e.tags;
       var snip = tg.split(" ").slice(0, 6).join(" · ");
-      return '<a class="sr-item" href="' + e.url + '">' +
+      var tiH = highlightMatch(ti, q);
+      var snipH = highlightMatch(snip, q);
+      return '<a class="sr-item' + (i === searchSelectedIdx ? " selected" : "") + '" href="' + e.url + '" data-idx="' + i + '">' +
         '<div class="sr-page">' + pg + "</div>" +
-        '<div class="sr-title">' + ti + "</div>" +
-        '<div class="sr-snippet">' + snip + "</div></a>";
+        '<div class="sr-title">' + tiH + "</div>" +
+        '<div class="sr-snippet">' + snipH + "</div></a>";
     }).join("");
   }
+
+  function moveSearchSelection(dir) {
+    if (!currentHits.length) return;
+    searchSelectedIdx += dir;
+    if (searchSelectedIdx < 0) searchSelectedIdx = currentHits.length - 1;
+    if (searchSelectedIdx >= currentHits.length) searchSelectedIdx = 0;
+    var items = document.querySelectorAll("#searchOverlay .sr-item");
+    items.forEach(function (el, i) {
+      el.classList.toggle("selected", i === searchSelectedIdx);
+    });
+    var sel = document.querySelector("#searchOverlay .sr-item.selected");
+    if (sel) sel.scrollIntoView({ block: "nearest" });
+  }
+
   function t(key) { return I18N[key] ? (I18N[key][lang] || I18N[key].zh) : key; }
 
   /* ---------- Init ---------- */
   function init() {
+    /* Build search index */
+    SEARCH_INDEX = buildSearchIndex();
+
     applyDark(dark);
     applyLang(lang);
 
     /* set search button icon */
     var sb = document.querySelector(".search-btn");
     if (sb) sb.innerHTML = ICON_SEARCH;
-
-    /* set search overlay icon */
     var sico = document.querySelector(".s-ico");
     if (sico) sico.innerHTML = ICON_SEARCH;
 
@@ -222,7 +301,7 @@
       toTop.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
     }
 
-    /* search */
+    /* search - Fix #11: keyboard navigation */
     var ov = document.getElementById("searchOverlay");
     if (sb) sb.addEventListener("click", openSearch);
     if (ov) {
@@ -238,30 +317,85 @@
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") closeSearch();
         if ((e.ctrlKey || e.metaKey) && e.key === "k") { e.preventDefault(); openSearch(); }
+        /* keyboard navigation in search */
+        if (ov.classList.contains("show")) {
+          if (e.key === "ArrowDown") { e.preventDefault(); moveSearchSelection(1); }
+          if (e.key === "ArrowUp") { e.preventDefault(); moveSearchSelection(-1); }
+          if (e.key === "Enter" && searchSelectedIdx >= 0 && currentHits[searchSelectedIdx]) {
+            e.preventDefault();
+            window.location.href = currentHits[searchSelectedIdx].url;
+          }
+        }
       });
     }
 
-    /* chip filters (if present on page) */
-    var chips = document.querySelectorAll(".chip[data-filter]");
-    if (chips.length) {
-      chips.forEach(function (chip) {
-        chip.addEventListener("click", function () {
-          var filter = chip.getAttribute("data-filter");
-          chips.forEach(function (c) { c.classList.remove("active"); });
-          chip.classList.add("active");
-          var items = document.querySelectorAll("[data-type]");
-          items.forEach(function (item) {
-            if (filter === "all" || item.getAttribute("data-type") === filter) {
-              item.style.display = "";
-            } else {
-              item.style.display = "none";
-            }
+    /* chip filters — skip on codex page (codex.js handles its own chips) */
+    if (typeof initCodex !== "function") {
+      var chips = document.querySelectorAll(".chip[data-filter]");
+      if (chips.length) {
+        chips.forEach(function (chip) {
+          chip.addEventListener("click", function () {
+            var filter = chip.getAttribute("data-filter");
+            chips.forEach(function (c) { c.classList.remove("active"); });
+            chip.classList.add("active");
+            var items = document.querySelectorAll("[data-type]");
+            items.forEach(function (item) {
+              if (filter === "all" || item.getAttribute("data-type") === filter) {
+                item.style.display = "";
+              } else {
+                item.style.display = "none";
+              }
+            });
           });
         });
+      }
+    }
+
+    /* Init codex if on creatures page */
+    if (typeof initCodex === "function") initCodex();
+
+    /* Listen for system dark mode changes */
+    if (window.matchMedia) {
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
+        if (localStorage.getItem("aniimo-dark") === null) {
+          applyDark(e.matches);
+        }
       });
     }
 
-    applyLang(lang);
+    /* Note: do NOT call applyLang(lang) again here — it was already called
+       above, and re-calling would trigger renderCodex → unnecessary re-render. */
+  }
+
+  /* ---------- Translate type badges by CSS class ---------- */
+  /* Auto-translates <span class="type-badge t-fire">火</span> etc.
+     Only touches badges whose text is a pure element name (zh or en),
+     so custom badges like "物攻 +%" are left untouched. */
+  function translateBadges(l) {
+    var map = {
+      fire:    { zh: "火", en: "Fire" },
+      water:   { zh: "水", en: "Water" },
+      grass:   { zh: "草", en: "Grass" },
+      electric:{ zh: "电", en: "Lightning" },
+      ice:     { zh: "冰", en: "Ice" },
+      earth:   { zh: "土", en: "Earth" },
+      wind:    { zh: "风", en: "Wind" },
+      light:   { zh: "光", en: "Light" },
+      dark:    { zh: "暗", en: "Dark" }
+    };
+    /* Build reverse lookup: text → element key */
+    var lookup = {};
+    Object.keys(map).forEach(function (k) {
+      lookup[map[k].zh] = k;
+      lookup[map[k].en] = k;
+      lookup[map[k].zh + " " + map[k].en] = k; /* "火 Fire" combined */
+      lookup[map[k].en + " " + map[k].zh] = k; /* "Fire 火" combined */
+    });
+    document.querySelectorAll(".type-badge").forEach(function (badge) {
+      var txt = badge.textContent.trim();
+      var key = lookup[txt];
+      if (key) badge.textContent = map[key][l];
+    });
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
