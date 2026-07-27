@@ -56,7 +56,7 @@ body.dark{
 body.dark .bg-alt{background:#0C1020}
 body.dark tr:hover td{background:#1C2238}
 body.dark .chip{background:var(--card)}
-body.dark .search-box{background:var(--card)}
+
 body.dark .calc-result{background:#121828}
 body.dark .stat-pill{background:var(--mist-2)}
 body.dark .type-badge{opacity:.9}
