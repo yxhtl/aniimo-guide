@@ -502,7 +502,7 @@ var TIER_LIST = {
     SS: ["Wavwal","Coraliz","Minespine","Helgon","Inferlupa","Irisalis","Magmarex","Glameep","Tuckin","Geoclaw"],
     S:  ["Rookey","Panpanta","Tubster","Shrubclaw","Pomawk","Eklue","Fulmintis","Erlath","Luminelle","Scorchhowl"],
     A:  ["Ignitis","Stellarys","Malevsera","Sherro","Thornblade","Glynsera","Flamerion","Dreaple","Somniwing","Leafy","Helion","Lunara","Bouldus","Bailite","Grizbo","Infergon","Melloblum","Pawney","Turbo","Blazen"],
-    B:  ["Cornet","Waleetle","Fenmane","Piopiota","Dazmand","Fragrancier","Besauce","Reefish","Cheekie","Glacy","Pranky","Witchin","Helmwhelp","Veilfloat","Gachapus","Malangel","Geodeback","Flameruff","Cubbo","Eklue"],
+    B:  ["Cornet","Waleetle","Fenmane","Piopiota","Dazmand","Fragrancier","Besauce","Reefish","Cheekie","Glacy","Pranky","Witchin","Helmwhelp","Veilfloat","Gachapus","Malangel","Geodeback","Flameruff","Cubbo"],
     C:  ["Sparki","Hummin","Sapota","Jawling","Dewy","Pomegg","Budsquire","Wisptis","Fentuft","Sheldon","Baleetle","Cozite","Bubbeep","Lavazar","Pebbling","Flutternym","Gracewing","Nimbi","Irisal","Chirpi","Tromber","Susuta","Popota","Skippy","Emberpup","Bonesky","Fenrier","Shelly","Helmut","Popapus","Bulbly"],
     D:  ["Eko","Iris"]
   },
