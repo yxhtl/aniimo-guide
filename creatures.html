@@ -2,17 +2,23 @@
 <html lang="zh-CN">
 <head>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LXN57E7E6Z"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LXN57E7E6Z');
+  if (location.hostname === "aniimo.yxhtl.com") {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', 'G-LXN57E7E6Z');
+    var analyticsScript = document.createElement('script');
+    analyticsScript.async = true;
+    analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-LXN57E7E6Z';
+    document.head.appendChild(analyticsScript);
+  }
 </script>
 <!-- 百度统计 -->
 <script async src="https://hm.baidu.com/hm.js?71f28761d7809372b129ffb5598d0451"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://aniimo.yxhtl.com/creatures.html">
 <title>伊莫图鉴 | Aniimo Codex 中英双语攻略</title>
 <meta name="description" content="伊莫图鉴：全部95只伊莫数据，含属性、战斗定位、进化阶段、六维属性、形态变化与捕捉技巧。支持按属性/定位/阶段筛选，属性克制计算器，PvE/PvP强度榜。">
 <meta name="keywords" content="伊莫图鉴,Aniimo Codex,属性,火,水,草,电,冰,土,风,光,暗,进化,形态,DPS,Break,TierList,计算器">

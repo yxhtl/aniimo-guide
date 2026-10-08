@@ -2,17 +2,23 @@
 <html lang="zh-CN">
 <head>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LXN57E7E6Z"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LXN57E7E6Z');
+  if (location.hostname === "aniimo.yxhtl.com") {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', 'G-LXN57E7E6Z');
+    var analyticsScript = document.createElement('script');
+    analyticsScript.async = true;
+    analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-LXN57E7E6Z';
+    document.head.appendChild(analyticsScript);
+  }
 </script>
 <!-- 百度统计 -->
 <script async src="https://hm.baidu.com/hm.js?71f28761d7809372b129ffb5598d0451"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://aniimo.yxhtl.com/homeland.html">
 <title>家园建造：房车营地系统 | 伊莫 Aniimo 攻略</title>
 <meta name="description" content="伊莫家园建造攻略：房车系统、营地选址、自动种植、孵化器、装饰摆放、战斗属性加成。打造你的专属伊莫乐园。">
 <meta name="keywords" content="伊莫家园,Aniimo homeland,房车,RV,营地,种植,装饰,孵化器,Hatchinator,战斗加成">

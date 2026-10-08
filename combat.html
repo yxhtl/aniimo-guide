@@ -2,17 +2,23 @@
 <html lang="zh-CN">
 <head>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LXN57E7E6Z"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LXN57E7E6Z');
+  if (location.hostname === "aniimo.yxhtl.com") {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', 'G-LXN57E7E6Z');
+    var analyticsScript = document.createElement('script');
+    analyticsScript.async = true;
+    analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-LXN57E7E6Z';
+    document.head.appendChild(analyticsScript);
+  }
 </script>
 <!-- 百度统计 -->
 <script async src="https://hm.baidu.com/hm.js?71f28761d7809372b129ffb5598d0451"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://aniimo.yxhtl.com/combat.html">
 <title>战斗系统：属性克制与配队 | 伊莫 Aniimo 攻略</title>
 <meta name="description" content="伊莫战斗系统攻略：9种属性完整克制关系表（非双向机制）、指挥/共鸣双模式、5种战斗定位、配队思路、夺蛋PVEVP模式详解。">
 <meta name="keywords" content="伊莫战斗,Aniimo combat,属性克制,type chart,配队,PVEVP,夺蛋,Egg Heist,共鸣,Twine,破防,Break">

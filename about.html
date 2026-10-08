@@ -2,17 +2,23 @@
 <html lang="zh-CN">
 <head>
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LXN57E7E6Z"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LXN57E7E6Z');
+  if (location.hostname === "aniimo.yxhtl.com") {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', 'G-LXN57E7E6Z');
+    var analyticsScript = document.createElement('script');
+    analyticsScript.async = true;
+    analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-LXN57E7E6Z';
+    document.head.appendChild(analyticsScript);
+  }
 </script>
 <!-- 百度统计 -->
 <script async src="https://hm.baidu.com/hm.js?71f28761d7809372b129ffb5598d0451"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://aniimo.yxhtl.com/about.html">
 <title>关于本站 | 伊莫 Aniimo 攻略</title>
 <meta name="description" content="关于伊莫攻略站：本站是玩家非营利性攻略站，提供中英双语内容，持续更新。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230B3A6B'/><text x='50' y='72' font-size='60' font-weight='900' fill='%2373DBFF' text-anchor='middle' font-family='Arial,sans-serif'>A</text></svg>">
